@@ -28,9 +28,19 @@ public class PlayerMovement : MonoBehaviour
         // rb.freezeRotation = true;
     }
 
+    
+        private void FixedUpdate()
+    {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
+    }
+    
+
     void Update()
     {
-        if (!isDialogActive)
+        if (!isDialogActive || DialogueManager.GetInstance().dialogueIsPlaying)
         {
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
@@ -64,5 +74,5 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene(sceneName); // Pindah ke scene baru
         }
     }
-    
+
 }
