@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class enemyCar : MonoBehaviour
 {
-    public float speed;
+    public float normalSpeed = -1f;
+    private float currentSpeed;
 
     void Start()
     {
-        
+        currentSpeed = normalSpeed;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3 (0,1,0) * speed * Time.deltaTime);
+        transform.Translate(new Vector3(0, 1, 0) * currentSpeed * Time.deltaTime);
+    }
+
+    // Called when the player takes a power-up
+    public void ApplySpeedReduction(float reductionAmount)
+    {
+        currentSpeed -= reductionAmount;
+        currentSpeed = Mathf.Max(currentSpeed, 0f);
     }
 }

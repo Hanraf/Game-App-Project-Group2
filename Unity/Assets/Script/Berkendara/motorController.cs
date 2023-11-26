@@ -1,31 +1,70 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class motorController : MonoBehaviour
 {
     public float motorSpeed;
+    public float verticalSpeed; // Kecepatan vertikal
     public float maxPos = 5.401854f;
-    Vector3 position;
-    // Start is called before the first frame update
+    public float minPos = -5.401854f;
+    public float maxVerticalPos = 4.17f;
+    public float minVerticalPos = -4f;
+
+    public TextMeshProUGUI crashText; // Reference to CrashText
+
+    private Vector3 position;
+    private float distanceTraveled;
+
     void Start()
     {
         position = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        position.x += Input.GetAxis ("Horizontal") * motorSpeed * Time.deltaTime;
-        position.x = Mathf.Clamp (position.x, -5.401854f, 5.401854f);
+        // Pergerakan horizontal
+        position.x += Input.GetAxis("Horizontal") * motorSpeed * Time.deltaTime;
+        position.x = Mathf.Clamp(position.x, minPos, maxPos);
+
+        // Pergerakan vertikal
+        float verticalInput = Input.GetAxis("Vertical");
+        position.y += verticalInput * verticalSpeed * Time.deltaTime;
+        position.y = Mathf.Clamp(position.y, minVerticalPos, maxVerticalPos);
+
+        // Update distanceTraveled based on forward movement only
+        if (verticalInput > 0f)
+        {
+            distanceTraveled += verticalInput * verticalSpeed * Time.deltaTime;
+        }
+
         transform.position = position;
     }
 
-    void OnCollisionEnter2D(Collision2D col) 
+    public float GetDistanceTraveled()
+    {
+        return distanceTraveled;
+    }
+
+    public void ApplySpeedBoost(float boostAmount)
+    {
+        motorSpeed += boostAmount;
+
+        // Batas kecepatan
+        motorSpeed = Mathf.Clamp(motorSpeed, 0f, 20f); // Sesuaikan batas kecepatan yang diinginkan
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Enemy Car")
         {
-            Destroy (gameObject);
+            // Show crashText
+            crashText.gameObject.SetActive(true);
+
+            // Implement your game over logic here (optional)
+            Debug.Log("Game Over!");
+
+            // Load the game over scene (replace "GameOverScene" with your actual scene name)
+            UnityEngine.SceneManagement.SceneManager.LoadScene("kamar");
         }
     }
 }
