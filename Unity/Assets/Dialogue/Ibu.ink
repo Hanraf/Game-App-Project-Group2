@@ -1,2 +1,0 @@
-Bagaimana?
-Kamu sudah siap?

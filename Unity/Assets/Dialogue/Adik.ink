@@ -1,2 +1,0 @@
-Semangat!!
-Kakak pasti bisa ╰(*°▽°*)╯

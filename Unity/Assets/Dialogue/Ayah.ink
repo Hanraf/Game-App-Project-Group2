@@ -1,1 +1,0 @@
-Ayah yakin kamu bisa
