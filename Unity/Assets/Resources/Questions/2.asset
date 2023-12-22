@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1e3773ddaa9ce48835846fb8e11c7f, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  _info: Dalam konteks bela negara, apa arti semangat gotong royong dan bagaimana
+    Anda melihat perannya dalam lingkungan kerja?
+  _answers:
+  - _info: Menganggap semangat gotong royong sebagai aspek penting dalam bekerja
+      sama
+    _isCorrect: 0
+  - _info: Melihat kerjasama sebagai faktor kunci untuk mencapai tujuan bersama
+    _isCorrect: 0
+  - _info: Menerapkan semangat gotong royong sejauh yang diperlukan dalam pekerjaan
+      tim
+    _isCorrect: 1
+  - _info: Tidak memiliki pandangan khusus terhadap semangat gotong royong dalam
+      pekerjaan
+    _isCorrect: 0
+  _useTimer: 1
+  _timer: 15
+  _answerType: 1
+  _addScore: 10
