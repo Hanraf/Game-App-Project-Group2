@@ -100,11 +100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motorSpeed: 6
+  verticalSpeed: 2
   maxPos: 5.401854
   minPos: -5.401854
-  verticalSpeed: 2
   maxVerticalPos: 3
   minVerticalPos: -3
+  crashText: {fileID: 0}
 --- !u!50 &8351106533273738833
 Rigidbody2D:
   serializedVersion: 4
