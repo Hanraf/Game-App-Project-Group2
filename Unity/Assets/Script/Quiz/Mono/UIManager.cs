@@ -125,9 +125,9 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// Function that is used to display resolution screen.
     /// </summary>
-    void DisplayResolution(ResolutionScreenType type, int score)
+    void DisplayResolution(ResolutionScreenType type, int addScore, int answerScore)
     {
-        UpdateResUI(type, score);
+        UpdateResUI(type, addScore, answerScore);
         uIElements.ResolutionScreenAnimator.SetInteger(resStateParaHash, 2);
         uIElements.MainCanvasGroup.blocksRaycasts = false;
 
@@ -151,33 +151,34 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// Function that is used to display resolution UI information.
     /// </summary>
-    void UpdateResUI(ResolutionScreenType type, int score)
+    void UpdateResUI(ResolutionScreenType type, int addScore, int answerScore)
+{
+    var highscore = PlayerPrefs.GetInt(GameUtility.SavePrefKey);
+
+    switch (type)
     {
-        var highscore = PlayerPrefs.GetInt(GameUtility.SavePrefKey);
+        case ResolutionScreenType.Correct:
+            uIElements.ResolutionBG.color = parameters.CorrectBGColor;
+            uIElements.ResolutionStateInfoText.text = "CORRECT!";
+            uIElements.ResolutionScoreText.text = "+" + (addScore + answerScore); // Update to include both addScore and answerScore
+            break;
+        case ResolutionScreenType.Incorrect:
+            uIElements.ResolutionBG.color = parameters.IncorrectBGColor;
+            uIElements.ResolutionStateInfoText.text = "WRONG!";
+            uIElements.ResolutionScoreText.text = "-" + addScore; // Only display addScore for incorrect answers
+            break;
+        case ResolutionScreenType.Finish:
+            uIElements.ResolutionBG.color = parameters.FinalBGColor;
+            uIElements.ResolutionStateInfoText.text = "FINAL SCORE";
 
-        switch (type)
-        {
-            case ResolutionScreenType.Correct:
-                uIElements.ResolutionBG.color = parameters.CorrectBGColor;
-                uIElements.ResolutionStateInfoText.text = "CORRECT!";
-                uIElements.ResolutionScoreText.text = "+" + score;
-                break;
-            case ResolutionScreenType.Incorrect:
-                uIElements.ResolutionBG.color = parameters.IncorrectBGColor;
-                uIElements.ResolutionStateInfoText.text = "WRONG!";
-                uIElements.ResolutionScoreText.text = "-" + score;
-                break;
-            case ResolutionScreenType.Finish:
-                uIElements.ResolutionBG.color = parameters.FinalBGColor;
-                uIElements.ResolutionStateInfoText.text = "FINAL SCORE";
-
-                StartCoroutine(CalculateScore());
-                uIElements.FinishUIElements.gameObject.SetActive(true);
-                uIElements.HighScoreText.gameObject.SetActive(true);
-                uIElements.HighScoreText.text = ((highscore > events.StartupHighscore) ? "<color=yellow>new </color>" : string.Empty) + "Highscore: " + highscore;
-                break;
-        }
+            StartCoroutine(CalculateScore());
+            uIElements.FinishUIElements.gameObject.SetActive(true);
+            uIElements.HighScoreText.gameObject.SetActive(true);
+            uIElements.HighScoreText.text = ((highscore > events.StartupHighscore) ? "<color=yellow>new </color>" : string.Empty) + "Highscore: " + highscore;
+            break;
     }
+}
+
 
     /// <summary>
     /// Function that is used to calculate and display the score.

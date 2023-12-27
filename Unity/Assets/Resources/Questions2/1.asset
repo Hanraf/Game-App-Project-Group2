@@ -16,9 +16,11 @@ MonoBehaviour:
   _answers:
   - _info: 6
     _isCorrect: 1
+    _answerScore: 10
   - _info: 2
     _isCorrect: 0
+    _answerScore: 0
   _useTimer: 1
   _timer: 120
   _answerType: 1
-  _addScore: 10
+  _addScore: 0

@@ -4,10 +4,6 @@ using UnityEngine;
 [CustomEditor(typeof(Question))]
 public class Question_Editor : Editor
 {
-
-    #region Variables
-
-    #region Serialized Properties
     SerializedProperty questionInfoProp = null;
     SerializedProperty answersProp = null;
     SerializedProperty useTimerProp = null;
@@ -22,28 +18,18 @@ public class Question_Editor : Editor
             return answersProp.FindPropertyRelative("Array.size");
         }
     }
-    #endregion
 
     private bool showParameters = false;
 
-    #endregion
-
-    #region Default Unity methods
-
     void OnEnable()
     {
-        #region Fetch Properties
         questionInfoProp = serializedObject.FindProperty("_info");
         answersProp = serializedObject.FindProperty("_answers");
         useTimerProp = serializedObject.FindProperty("_useTimer");
         timerProp = serializedObject.FindProperty("_timer");
         answerTypeProp = serializedObject.FindProperty("_answerType");
         addScoreProp = serializedObject.FindProperty("_addScore");
-        #endregion
-
-        #region Get Values
         showParameters = EditorPrefs.GetBool("Question_showParameters_State");
-        #endregion
     }
 
     public override void OnInspectorGUI()
@@ -97,8 +83,6 @@ public class Question_Editor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 
-    #endregion
-
     void DrawAnswers()
     {
         EditorGUILayout.BeginVertical();
@@ -111,6 +95,11 @@ public class Question_Editor : Editor
         {
             EditorGUI.BeginChangeCheck();
             EditorGUILayout.PropertyField(answersProp.GetArrayElementAtIndex(i));
+
+            // Menambah properti "Answer Score" pada pengedit pertanyaan
+            SerializedProperty answerScoreProp = answersProp.GetArrayElementAtIndex(i).FindPropertyRelative("_answerScore");
+            EditorGUILayout.PropertyField(answerScoreProp, new GUIContent("Answer Score"));
+
             if (EditorGUI.EndChangeCheck())
             {
                 if (answerTypeProp.enumValueIndex == (int)Question.AnswerType.Single)

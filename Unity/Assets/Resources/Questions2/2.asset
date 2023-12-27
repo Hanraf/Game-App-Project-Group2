@@ -16,11 +16,14 @@ MonoBehaviour:
   _answers:
   - _info: geg
     _isCorrect: 1
+    _answerScore: 5
   - _info: gege
     _isCorrect: 1
+    _answerScore: 5
   - _info: geesg
     _isCorrect: 0
+    _answerScore: 0
   _useTimer: 0
   _timer: 0
   _answerType: 0
-  _addScore: 10
+  _addScore: 0

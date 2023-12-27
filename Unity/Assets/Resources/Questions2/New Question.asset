@@ -12,9 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1e3773ddaa9ce48835846fb8e11c7f, type: 3}
   m_Name: New Question
   m_EditorClassIdentifier: 
-  _info: 
-  _answers: []
+  _info: 'like '
+  _answers:
+  - _info: suka
+    _isCorrect: 1
+    _answerScore: 100
+  - _info: sukaak
+    _isCorrect: 1
+    _answerScore: 1
+  - _info: suuukaaa
+    _isCorrect: 1
+    _answerScore: 23
+  - _info: sukak
+    _isCorrect: 1
+    _answerScore: 6
   _useTimer: 0
-  _timer: 0
-  _answerType: 0
-  _addScore: 10
+  _timer: 1
+  _answerType: 2
+  _addScore: 0

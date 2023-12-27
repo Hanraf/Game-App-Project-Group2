@@ -23,7 +23,6 @@ public class QuizGameManager : MonoBehaviour
     [Header("Question Settings")]
     [SerializeField] string questionsFolderName = "Questions1"; // Default folder name
 
-
     private List<AnswerData> PickedAnswers = new List<AnswerData>();
     private List<int> FinishedQuestions = new List<int>();
     private int currentQuestion = 0;
@@ -72,7 +71,8 @@ public class QuizGameManager : MonoBehaviour
 
     void UpdateAnswers(AnswerData newAnswer)
     {
-        if (Questions[currentQuestion].GetAnswerType == Question.AnswerType.Single)
+        if (Questions[currentQuestion].GetAnswerType == Question.AnswerType.Single ||
+            Questions[currentQuestion].GetAnswerType == Question.AnswerType.MultipleTrue)
         {
             foreach (var answer in PickedAnswers)
             {
@@ -129,7 +129,11 @@ public class QuizGameManager : MonoBehaviour
         bool isCorrect = CheckAnswers();
         FinishedQuestions.Add(currentQuestion);
 
-        UpdateScore((isCorrect) ? Questions[currentQuestion].AddScore : -Questions[currentQuestion].AddScore);
+        // Menggunakan AnswerScore dari setiap jawaban sebagai tambahan atau pengurangan skor
+        int addScore = (isCorrect ? Questions[currentQuestion].AddScore : -Questions[currentQuestion].AddScore);
+        int answerScore = CalculateAnswerScores();
+
+        UpdateScore(addScore + answerScore);
 
         if (IsFinished)
         {
@@ -143,7 +147,7 @@ public class QuizGameManager : MonoBehaviour
 
         if (events.DisplayResolutionScreen != null)
         {
-            events.DisplayResolutionScreen(type, Questions[currentQuestion].AddScore);
+            events.DisplayResolutionScreen?.Invoke(type, addScore, answerScore);
         }
 
         AudioManager.Instance.PlaySound((isCorrect) ? "CorrectSFX" : "IncorrectSFX");
@@ -228,20 +232,36 @@ public class QuizGameManager : MonoBehaviour
     {
         if (PickedAnswers.Count > 0)
         {
-            List<int> c = Questions[currentQuestion].GetCorrectAnswers();
-            List<int> p = PickedAnswers.Select(x => x.AnswerIndex).ToList();
+            List<int> correctAnswers = Questions[currentQuestion].GetCorrectAnswers();
+            List<int> pickedAnswers = PickedAnswers.Select(x => x.AnswerIndex).ToList();
 
-            var f = c.Except(p).ToList();
-            var s = p.Except(c).ToList();
+            if (Questions[currentQuestion].GetAnswerType == Question.AnswerType.MultipleTrue)
+            {
+                // Check if all correct answers are picked and no additional answers are picked
+                var incorrectAnswersPicked = PickedAnswers
+                    .Where(picked => !correctAnswers.Contains(picked.AnswerIndex))
+                    .ToList();
 
-            return !f.Any() && !s.Any();
+                return !incorrectAnswersPicked.Any();
+            }
+            else if (Questions[currentQuestion].GetAnswerType == Question.AnswerType.Multi)
+            {
+                // Check if all correct answers are picked and no incorrect answers are picked
+                return correctAnswers.All(answer => pickedAnswers.Contains(answer))
+                    && pickedAnswers.All(answer => correctAnswers.Contains(answer));
+            }
+            else if (Questions[currentQuestion].GetAnswerType == Question.AnswerType.Single)
+            {
+                // Check if only one answer is picked, and it is the correct one
+                return PickedAnswers.Count == 1 && correctAnswers.Contains(PickedAnswers[0].AnswerIndex);
+            }
         }
+
         return false;
     }
 
     void LoadQuestions()
     {
-        // Get the path for the questions folder
         string folderPath = questionsFolderName;
         Object[] objs = Resources.LoadAll(folderPath, typeof(Question));
 
@@ -285,6 +305,17 @@ public class QuizGameManager : MonoBehaviour
         {
             events.ScoreUpdated();
         }
+    }
+
+    // Menambahkan metode untuk menghitung skor jawaban
+    int CalculateAnswerScores()
+    {
+        int answerScores = 0;
+        foreach (var pickedAnswer in PickedAnswers)
+        {
+            answerScores += Questions[currentQuestion].Answers[pickedAnswer.AnswerIndex].AnswerScore;
+        }
+        return answerScores;
     }
 
     #region Getters

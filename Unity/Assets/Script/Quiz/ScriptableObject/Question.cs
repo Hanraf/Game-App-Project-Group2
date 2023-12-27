@@ -10,20 +10,21 @@ public struct Answer
 
     [SerializeField] private bool _isCorrect;
     public bool IsCorrect { get { return _isCorrect; } }
+
+    [SerializeField] private int _answerScore;
+    public int AnswerScore { get { return _answerScore; } }
 }
-[CreateAssetMenu(fileName = "New Question", menuName = "Quiz/new Question")]
+
+[CreateAssetMenu(fileName = "New Question", menuName = "Quiz/New Question")]
 public class Question : ScriptableObject
 {
+    public enum AnswerType { Multi, Single, MultipleTrue }
 
-    public enum AnswerType { Multi, Single }
-
-    [SerializeField] private String _info = String.Empty;
+    [SerializeField] private string _info = String.Empty;
     public String Info { get { return _info; } }
 
     [SerializeField] Answer[] _answers = null;
     public Answer[] Answers { get { return _answers; } }
-
-    //Parameters
 
     [SerializeField] private bool _useTimer = false;
     public bool UseTimer { get { return _useTimer; } }
@@ -37,9 +38,6 @@ public class Question : ScriptableObject
     [SerializeField] private int _addScore = 10;
     public int AddScore { get { return _addScore; } }
 
-    /// <summary>
-    /// Function that is called to collect and return correct answers indexes.
-    /// </summary>
     public List<int> GetCorrectAnswers()
     {
         List<int> CorrectAnswers = new List<int>();
@@ -51,5 +49,15 @@ public class Question : ScriptableObject
             }
         }
         return CorrectAnswers;
+    }
+
+    // Fungsi tambahan untuk mendapatkan nilai jawaban
+    public int GetAnswerScore(int answerIndex)
+    {
+        if (answerIndex >= 0 && answerIndex < Answers.Length)
+        {
+            return Answers[answerIndex].AnswerScore;
+        }
+        return 0;
     }
 }
