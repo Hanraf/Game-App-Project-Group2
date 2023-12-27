@@ -17,13 +17,17 @@ MonoBehaviour:
   _answers:
   - _info: Menyadari dampak tindakan individu terhadap citra perusahaan
     _isCorrect: 0
+    _answerScore: 0
   - _info: Berkomitmen untuk memberikan kontribusi positif dalam pekerjaan
     _isCorrect: 1
+    _answerScore: 10
   - _info: Tidak terlalu peduli dengan persepsi eksternal terhadap perusahaan
     _isCorrect: 0
+    _answerScore: 0
   - _info: Tidak terlalu tertarik untuk mempertahankan citra positif
     _isCorrect: 0
+    _answerScore: 0
   _useTimer: 1
   _timer: 15
   _answerType: 1
-  _addScore: 10
+  _addScore: 0

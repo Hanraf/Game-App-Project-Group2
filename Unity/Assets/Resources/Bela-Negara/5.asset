@@ -10,21 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe1e3773ddaa9ce48835846fb8e11c7f, type: 3}
-  m_Name: 6
+  m_Name: 5
   m_EditorClassIdentifier: 
-  _info: Bagaimana, menurut Anda, pendidikan karakter dapat memberikan nilai tambah
-    dalam pembentukan seorang calon karyawan?
+  _info: Dalam konteks pekerjaan, bagaimana Anda dapat menjaga keseimbangan antara
+    kepentingan pribadi dan kontribusi untuk kepentingan bersama?
   _answers:
   - _info: Mempertimbangkan kepentingan bersama dalam setiap keputusan
     _isCorrect: 0
-  - _info: Melihat pendidikan karakter sebagai komplementer terhadap pengetahuan
-      teknis
+    _answerScore: 0
+  - _info: Berusaha mencapai keseimbangan yang adil antara kepentingan pribadi dan
+      bersama
+    _isCorrect: 0
+    _answerScore: 10
+  - _info: Tergantung pada situasi dan prioritas tugas
     _isCorrect: 1
-  - _info: Mencoba menerapkan nilai-nilai karakter dalam interaksi sehari-hari
+    _answerScore: 0
+  - _info: Tidak terlalu memperhatikan kepentingan bersama dalam pekerjaan sehari-hari
     _isCorrect: 0
-  - _info: Kurang memperhatikan pengembangan karakter dalam konteks pekerjaan
-    _isCorrect: 0
+    _answerScore: 0
   _useTimer: 1
   _timer: 15
   _answerType: 1
-  _addScore: 10
+  _addScore: 0

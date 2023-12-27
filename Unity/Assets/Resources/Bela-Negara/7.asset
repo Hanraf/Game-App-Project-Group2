@@ -17,13 +17,17 @@ MonoBehaviour:
   _answers:
   - _info: Menyadari pentingnya tanggung jawab sosial perusahaan
     _isCorrect: 0
+    _answerScore: 0
   - _info: Memahami kontribusi perusahaan terhadap kesejahteraan masyarakat
     _isCorrect: 0
+    _answerScore: 0
   - _info: Mendukung kegiatan tanggung jawab sosial perusahaan sesuai kemampuan
     _isCorrect: 1
+    _answerScore: 10
   - _info: Kurang tertarik untuk terlibat dalam kegiatan sosial perusahaan
     _isCorrect: 0
+    _answerScore: 0
   _useTimer: 1
   _timer: 15
   _answerType: 1
-  _addScore: 10
+  _addScore: 0

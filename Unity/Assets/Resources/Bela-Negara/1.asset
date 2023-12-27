@@ -17,13 +17,17 @@ MonoBehaviour:
   _answers:
   - _info: Merasa setiap orang memiliki peran yang sama penting
     _isCorrect: 0
+    _answerScore: 0
   - _info: Melihat kemajuan negara sebagai tanggung jawab bersama
     _isCorrect: 0
+    _answerScore: 0
   - _info: Memahami kebutuhan untuk berkontribusi, tetapi dengan pertimbangan situasional
     _isCorrect: 1
+    _answerScore: 10
   - _info: Menganggapnya sebagai aspek yang kurang relevan dalam pekerjaan sehari-hari
     _isCorrect: 0
+    _answerScore: 0
   _useTimer: 1
   _timer: 15
   _answerType: 1
-  _addScore: 10
+  _addScore: 0

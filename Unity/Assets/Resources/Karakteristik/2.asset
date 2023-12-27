@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1e3773ddaa9ce48835846fb8e11c7f, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  _info: "Atasan saya menanyakan tanggapan saya tentang teman sejawat saya, yang
+    saya katakan\u2026\u2026"
+  _answers:
+  - _info: Mengatakan apa adanya tentang teman saya
+    _isCorrect: 1
+    _answerScore: 8
+  - _info: Mengatakan hal yang buruk saja tentang teman saya
+    _isCorrect: 1
+    _answerScore: 4
+  - _info: Mengatakan hal yang baik saja tentang teman saya
+    _isCorrect: 1
+    _answerScore: 6
+  - _info: Mengatakan hal yang baik terlebih dahulu lalu memberitahukan kekurangannya
+    _isCorrect: 1
+    _answerScore: 5
+  _useTimer: 0
+  _timer: 0
+  _answerType: 2
+  _addScore: 0

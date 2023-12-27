@@ -936,6 +936,8 @@ MonoBehaviour:
   targetDistance: 100
   playerCar: {fileID: 1825682490}
   timeText: {fileID: 549306534}
+  levelComplete: 1-kamar
+  levelGameOver: 1-Kampus
 --- !u!4 &1221832519
 Transform:
   m_ObjectHideFlags: 0
@@ -1536,6 +1538,10 @@ PrefabInstance:
     - target: {fileID: 6276391690005302287, guid: 0c388c06a4bc5954d81bc3fd9f641613, type: 3}
       propertyPath: motorSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276391690005302287, guid: 0c388c06a4bc5954d81bc3fd9f641613, type: 3}
+      propertyPath: levelGameOver
+      value: 1-kamar
       objectReference: {fileID: 0}
     - target: {fileID: 6276391690005302287, guid: 0c388c06a4bc5954d81bc3fd9f641613, type: 3}
       propertyPath: verticalSpeed

@@ -10,17 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe1e3773ddaa9ce48835846fb8e11c7f, type: 3}
-  m_Name: 1
+  m_Name: 4
   m_EditorClassIdentifier: 
-  _info: 4+2
+  _info: Ali menabung uang sebesar Rp1.500.000,00 di sebuah bank. Setelah 8 bulan
+    jumlah tabungannya menjadi Rp1.600.000,00. Persentase suku bunga bank tersebut
+    per tahun adalah ....
   _answers:
-  - _info: 6
-    _isCorrect: 1
-    _answerScore: 10
-  - _info: 2
+  - _info: 12,5%
     _isCorrect: 0
     _answerScore: 0
-  _useTimer: 1
-  _timer: 120
+  - _info: 10%
+    _isCorrect: 0
+    _answerScore: 0
+  - _info: 8,5%
+    _isCorrect: 0
+    _answerScore: 0
+  - _info: 8%
+    _isCorrect: 1
+    _answerScore: 10
+  _useTimer: 0
+  _timer: 0
   _answerType: 1
   _addScore: 0

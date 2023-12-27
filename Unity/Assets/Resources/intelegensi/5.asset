@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1e3773ddaa9ce48835846fb8e11c7f, type: 3}
+  m_Name: 5
+  m_EditorClassIdentifier: 
+  _info: Pak Roni menjual 50 buah mobil-mobilan dengan harga tiap mobil-mobilan adalah
+    Rp. 3000,00. Jika setelah menjual semua mobil-mobilannya, ternyata Pak Roni mengalami
+    kerugian sebesar Rp25.000,00, maka harga pembelian seluruh mobil-mobilan itu
+    adalah ....
+  _answers:
+  - _info: Rp100.000,00
+    _isCorrect: 0
+    _answerScore: 0
+  - _info: Rp125.000,00
+    _isCorrect: 0
+    _answerScore: 0
+  - _info: Rp150.000,00
+    _isCorrect: 0
+    _answerScore: 0
+  - _info: Rp175.000,00
+    _isCorrect: 1
+    _answerScore: 10
+  _useTimer: 0
+  _timer: 0
+  _answerType: 1
+  _addScore: 0

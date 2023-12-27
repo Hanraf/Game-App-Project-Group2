@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     public GameObject playerCar;
     public TextMeshProUGUI timeText;
 
+    [Header("Level Settings")]
+    [SerializeField] string levelComplete = "1-Kampus"; // Default folder name
+    [SerializeField] string levelGameOver = "1-kamar"; // Default folder name
+
     private RoadManager roadManager;  // Tambahkan referensi ke RoadManager
 
     private void Awake()
@@ -65,13 +69,15 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         Debug.Log("Game Over!");
-        SceneManager.LoadScene("1-kamar");
+        string gameover = levelGameOver;
+        SceneManager.LoadScene(gameover);
     }
 
     public void LevelComplete()
     {
         Debug.Log("Level Complete!");
-        SceneManager.LoadScene("1-Kampus");
+        string complete = levelComplete;
+        SceneManager.LoadScene(complete);
     }
 
     string FormatTime(float seconds)

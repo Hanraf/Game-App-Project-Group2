@@ -17,13 +17,17 @@ MonoBehaviour:
   _answers:
   - _info: Mengakui integritas sebagai prinsip utama dalam menjaga kerahasiaan informasi
     _isCorrect: 0
+    _answerScore: 0
   - _info: Memahami pentingnya integritas, terutama dalam konteks kerahasiaan informasi
     _isCorrect: 1
+    _answerScore: 10
   - _info: Menghormati kebijakan perusahaan terkait integritas dan kerahasiaan informasi
     _isCorrect: 0
+    _answerScore: 0
   - _info: Tidak menganggap integritas sebagai prioritas utama dalam pekerjaan
     _isCorrect: 0
+    _answerScore: 0
   _useTimer: 1
   _timer: 15
   _answerType: 1
-  _addScore: 10
+  _addScore: 0

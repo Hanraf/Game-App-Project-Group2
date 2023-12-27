@@ -18,15 +18,19 @@ MonoBehaviour:
   - _info: Menganggap semangat gotong royong sebagai aspek penting dalam bekerja
       sama
     _isCorrect: 0
+    _answerScore: 0
   - _info: Melihat kerjasama sebagai faktor kunci untuk mencapai tujuan bersama
     _isCorrect: 0
+    _answerScore: 0
   - _info: Menerapkan semangat gotong royong sejauh yang diperlukan dalam pekerjaan
       tim
     _isCorrect: 1
+    _answerScore: 10
   - _info: Tidak memiliki pandangan khusus terhadap semangat gotong royong dalam
       pekerjaan
     _isCorrect: 0
+    _answerScore: 0
   _useTimer: 1
   _timer: 15
   _answerType: 1
-  _addScore: 10
+  _addScore: 0

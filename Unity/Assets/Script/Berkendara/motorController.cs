@@ -15,6 +15,9 @@ public class motorController : MonoBehaviour
     private Vector3 position;
     private float distanceTraveled;
 
+    [Header("Level Settings")]
+    [SerializeField] string levelGameOver = "1-kamar"; // Default folder name
+
     void Start()
     {
         position = transform.position;
@@ -62,9 +65,10 @@ public class motorController : MonoBehaviour
 
             // Implement your game over logic here (optional)
             Debug.Log("Game Over!");
+            string gameover = levelGameOver;
 
             // Load the game over scene (replace "GameOverScene" with your actual scene name)
-            UnityEngine.SceneManagement.SceneManager.LoadScene("1-kamar");
+            UnityEngine.SceneManagement.SceneManager.LoadScene(gameover);
         }
     }
 }

@@ -17,13 +17,17 @@ MonoBehaviour:
   _answers:
   - _info: Menyadari peran individu dalam menciptakan perubahan positif
     _isCorrect: 0
+    _answerScore: 0
   - _info: Mencari peluang untuk memberikan ide dan inovasi dalam pekerjaan
     _isCorrect: 0
+    _answerScore: 0
   - _info: Fokus pada tugas rutin sambil tetap terbuka terhadap perubahan
     _isCorrect: 1
+    _answerScore: 10
   - _info: Tidak terlalu memikirkan peran individu dalam perubahan
     _isCorrect: 0
+    _answerScore: 0
   _useTimer: 1
   _timer: 15
   _answerType: 1
-  _addScore: 10
+  _addScore: 0

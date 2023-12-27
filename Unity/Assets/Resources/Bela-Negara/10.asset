@@ -17,13 +17,17 @@ MonoBehaviour:
   _answers:
   - _info: Mengakui peran generasi muda sebagai agen perubahan potensial
     _isCorrect: 0
+    _answerScore: 0
   - _info: Mencari peluang untuk memberikan dampak positif melalui pekerjaan
     _isCorrect: 0
+    _answerScore: 0
   - _info: Fokus pada tugas dan tanggung jawab pribadi dalam pekerjaan
     _isCorrect: 1
+    _answerScore: 10
   - _info: Tidak merasa terlalu berkontribusi terhadap pembangunan negara
     _isCorrect: 0
+    _answerScore: 0
   _useTimer: 1
   _timer: 15
   _answerType: 1
-  _addScore: 10
+  _addScore: 0

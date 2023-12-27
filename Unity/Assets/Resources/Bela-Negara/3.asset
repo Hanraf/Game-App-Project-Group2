@@ -17,13 +17,17 @@ MonoBehaviour:
   _answers:
   - _info: Menyadari potensi teknologi untuk meningkatkan efisiensi
     _isCorrect: 0
+    _answerScore: 0
   - _info: Melihat teknologi sebagai alat bantu yang dapat dioptimalkan
     _isCorrect: 1
+    _answerScore: 10
   - _info: Menggunakan teknologi sesuai dengan kebijakan perusahaan
     _isCorrect: 0
+    _answerScore: 0
   - _info: Kurang tertarik untuk memanfaatkan teknologi dalam pekerjaan sehari-hari
     _isCorrect: 0
+    _answerScore: 0
   _useTimer: 1
   _timer: 15
   _answerType: 1
-  _addScore: 10
+  _addScore: 0

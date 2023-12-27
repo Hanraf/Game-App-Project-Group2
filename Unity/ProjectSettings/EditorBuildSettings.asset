@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scene/1-Halaman.unity
     guid: c66929b0546bd974aa5ee83c9ca8b794
   - enabled: 1
-    path: Assets/Scene/berkendara.unity
+    path: Assets/Scene/1-berkendara.unity
     guid: 5c4cb229443302249b2ffd6aeecd9992
   - enabled: 1
     path: Assets/Scene/1-Kampus.unity
@@ -39,7 +39,13 @@ EditorBuildSettings:
     path: Assets/Scene/ruang_ujian.unity
     guid: b73933a98a1f84d429186812fc23a4f2
   - enabled: 1
-    path: Assets/Scene/Quiz.unity
+    path: Assets/Scene/Quiz (Bela Negara).unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scene/Quiz (intelegensi).unity
+    guid: 4f4250d1077b04d4da5356924a5099a5
+  - enabled: 1
+    path: Assets/Scene/Quiz (Karakteristik).unity
+    guid: 85c2038fd0e579445b2a5eaa23ba459f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2ea68e328b9896345b249167d5c7c22b, type: 2}
