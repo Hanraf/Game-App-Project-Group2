@@ -18,20 +18,23 @@ EditorBuildSettings:
     path: Assets/Scene/pilih_karakter.unity
     guid: dfb20b16c11356c44ba2698424d0dd87
   - enabled: 1
-    path: Assets/Scene/kamar.unity
+    path: Assets/Scene/1-kamar.unity
     guid: 3e2df6cd063161a4a9be2c15f248a224
   - enabled: 1
-    path: Assets/Scene/ruang_keluarga.unity
+    path: Assets/Scene/1-ruang_keluarga.unity
     guid: 81fc80e0ea7d4b741ae69aa7ea91125c
   - enabled: 0
     path: Assets/Scene/Gui.unity
     guid: 97ce71df9683c8f47b466839e546f211
   - enabled: 1
-    path: Assets/Scene/Halaman.unity
+    path: Assets/Scene/1-Halaman.unity
     guid: c66929b0546bd974aa5ee83c9ca8b794
   - enabled: 1
     path: Assets/Scene/berkendara.unity
     guid: 5c4cb229443302249b2ffd6aeecd9992
+  - enabled: 1
+    path: Assets/Scene/1-Kampus.unity
+    guid: 4e4c774d6f0cc724e94a6dca0e3de1e2
   - enabled: 1
     path: Assets/Scene/ruang_ujian.unity
     guid: b73933a98a1f84d429186812fc23a4f2

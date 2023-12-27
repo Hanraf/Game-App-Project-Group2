@@ -64,7 +64,7 @@ public class motorController : MonoBehaviour
             Debug.Log("Game Over!");
 
             // Load the game over scene (replace "GameOverScene" with your actual scene name)
-            UnityEngine.SceneManagement.SceneManager.LoadScene("kamar");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("1-kamar");
         }
     }
 }

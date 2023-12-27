@@ -65,13 +65,13 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         Debug.Log("Game Over!");
-        SceneManager.LoadScene("kamar");
+        SceneManager.LoadScene("1-kamar");
     }
 
     public void LevelComplete()
     {
         Debug.Log("Level Complete!");
-        SceneManager.LoadScene("ruang_ujian");
+        SceneManager.LoadScene("1-Kampus");
     }
 
     string FormatTime(float seconds)
