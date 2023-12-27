@@ -936,8 +936,8 @@ MonoBehaviour:
   targetDistance: 100
   playerCar: {fileID: 1825682490}
   timeText: {fileID: 549306534}
-  levelComplete: 1-kamar
-  levelGameOver: 1-Kampus
+  levelComplete: 1-Kampus
+  levelGameOver: 1-kamar
 --- !u!4 &1221832519
 Transform:
   m_ObjectHideFlags: 0

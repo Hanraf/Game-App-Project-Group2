@@ -47,5 +47,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Quiz (Karakteristik).unity
     guid: 85c2038fd0e579445b2a5eaa23ba459f
+  - enabled: 1
+    path: Assets/Scene/1-Perpus.unity
+    guid: c49cfece7ce744946b9c8bae50b0c575
+  - enabled: 1
+    path: Assets/Scene/2-kamar.unity
+    guid: b201d7fc13d1a1a4e9fb8b25979e99a0
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2ea68e328b9896345b249167d5c7c22b, type: 2}

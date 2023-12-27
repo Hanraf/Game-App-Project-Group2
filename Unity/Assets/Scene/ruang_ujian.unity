@@ -1514,7 +1514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8659353274503153550, guid: 65cdf59fdf73c1a49865680802c38b54, type: 3}
       propertyPath: sceneName
-      value: Quiz
+      value: Quiz (Bela Negara)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
