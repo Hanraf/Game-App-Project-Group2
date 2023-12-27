@@ -2,23 +2,24 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AnswerData : MonoBehaviour {
+public class AnswerData : MonoBehaviour
+{
 
     #region Variables
 
     [Header("UI Elements")]
-    [SerializeField]    TextMeshProUGUI infoTextObject      = null;
-    [SerializeField]    Image           toggle              = null;
+    [SerializeField] TextMeshProUGUI infoTextObject = null;
+    [SerializeField] Image toggle = null;
 
     [Header("Textures")]
-    [SerializeField]    Sprite          uncheckedToggle     = null;
-    [SerializeField]    Sprite          checkedToggle       = null;
+    [SerializeField] Sprite uncheckedToggle = null;
+    [SerializeField] Sprite checkedToggle = null;
 
     [Header("References")]
-    [SerializeField]    GameEvents      events              = null;
+    [SerializeField] GameEvents events = null;
 
-    private             RectTransform   _rect               = null;
-    public              RectTransform   Rect
+    private RectTransform _rect = null;
+    public RectTransform Rect
     {
         get
         {
@@ -30,17 +31,17 @@ public class AnswerData : MonoBehaviour {
         }
     }
 
-    private             int             _answerIndex        = -1;
-    public              int             AnswerIndex         { get { return _answerIndex; } }
+    private int _answerIndex = -1;
+    public int AnswerIndex { get { return _answerIndex; } }
 
-    private             bool            Checked             = false;
+    private bool Checked = false;
 
     #endregion
 
     /// <summary>
     /// Function that is called to update the answer data.
     /// </summary>
-    public void UpdateData (string info, int index)
+    public void UpdateData(string info, int index)
     {
         infoTextObject.text = info;
         _answerIndex = index;
@@ -48,7 +49,7 @@ public class AnswerData : MonoBehaviour {
     /// <summary>
     /// Function that is called to reset values back to default.
     /// </summary>
-    public void Reset ()
+    public void Reset()
     {
         Checked = false;
         UpdateUI();
@@ -56,7 +57,7 @@ public class AnswerData : MonoBehaviour {
     /// <summary>
     /// Function that is called to switch the state.
     /// </summary>
-    public void SwitchState ()
+    public void SwitchState()
     {
         Checked = !Checked;
         UpdateUI();
@@ -69,7 +70,7 @@ public class AnswerData : MonoBehaviour {
     /// <summary>
     /// Function that is called to update UI.
     /// </summary>
-    void UpdateUI ()
+    void UpdateUI()
     {
         if (toggle == null) return;
 

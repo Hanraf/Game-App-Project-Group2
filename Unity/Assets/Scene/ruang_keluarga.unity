@@ -7497,7 +7497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: GameMusic
-    clip: {fileID: 8300000, guid: aeda267682bee2d4d8bec6065418e470, type: 3}
+    clip: {fileID: 8300000, guid: cc3179b46ed48c2488005b2b13272224, type: 3}
     parameters:
       Volume: 0.4
       Pitch: 1

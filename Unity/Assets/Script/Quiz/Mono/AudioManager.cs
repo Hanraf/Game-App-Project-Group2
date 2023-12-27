@@ -15,21 +15,21 @@ public class Sound
 {
     #region Variables
 
-    [SerializeField]    String              name            = String.Empty;
-    public              String              Name            { get { return name; } }
+    [SerializeField] String name = String.Empty;
+    public String Name { get { return name; } }
 
-    [SerializeField]    AudioClip           clip            = null;
-    public              AudioClip           Clip            { get { return clip; } }
+    [SerializeField] AudioClip clip = null;
+    public AudioClip Clip { get { return clip; } }
 
-    [SerializeField]    SoundParameters     parameters      = new SoundParameters();
-    public              SoundParameters     Parameters      { get { return parameters; } }
+    [SerializeField] SoundParameters parameters = new SoundParameters();
+    public SoundParameters Parameters { get { return parameters; } }
 
     [HideInInspector]
-    public              AudioSource         Source          = null;
+    public AudioSource Source = null;
 
     #endregion
 
-    public void Play ()
+    public void Play()
     {
         Source.clip = Clip;
 
@@ -39,21 +39,22 @@ public class Sound
 
         Source.Play();
     }
-    public void Stop ()
+    public void Stop()
     {
         Source.Stop();
     }
 }
-public class AudioManager : MonoBehaviour {
+public class AudioManager : MonoBehaviour
+{
 
     #region Variables
 
-    public static       AudioManager    Instance        = null;
+    public static AudioManager Instance = null;
 
-    [SerializeField]    Sound[]         sounds          = null;
-    [SerializeField]    AudioSource     sourcePrefab    = null;
+    [SerializeField] Sound[] sounds = null;
+    [SerializeField] AudioSource sourcePrefab = null;
 
-    [SerializeField]    String          startupTrack    = String.Empty;
+    [SerializeField] String startupTrack = String.Empty;
 
     #endregion
 

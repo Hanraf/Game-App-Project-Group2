@@ -2,19 +2,20 @@
 using UnityEngine;
 
 [CustomEditor(typeof(Question))]
-public class Question_Editor : Editor {
+public class Question_Editor : Editor
+{
 
     #region Variables
 
     #region Serialized Properties
-    SerializedProperty  questionInfoProp        = null;
-    SerializedProperty  answersProp             = null;
-    SerializedProperty  useTimerProp            = null;
-    SerializedProperty  timerProp               = null;
-    SerializedProperty  answerTypeProp          = null;
-    SerializedProperty  addScoreProp            = null;
+    SerializedProperty questionInfoProp = null;
+    SerializedProperty answersProp = null;
+    SerializedProperty useTimerProp = null;
+    SerializedProperty timerProp = null;
+    SerializedProperty answerTypeProp = null;
+    SerializedProperty addScoreProp = null;
 
-    SerializedProperty  arraySizeProp
+    SerializedProperty arraySizeProp
     {
         get
         {
@@ -23,21 +24,21 @@ public class Question_Editor : Editor {
     }
     #endregion
 
-    private bool        showParameters          = false;
+    private bool showParameters = false;
 
     #endregion
 
     #region Default Unity methods
 
-    void OnEnable ()
+    void OnEnable()
     {
         #region Fetch Properties
-        questionInfoProp    = serializedObject.FindProperty("_info");
-        answersProp         = serializedObject.FindProperty("_answers");
-        useTimerProp        = serializedObject.FindProperty("_useTimer");
-        timerProp           = serializedObject.FindProperty("_timer");
-        answerTypeProp      = serializedObject.FindProperty("_answerType");
-        addScoreProp        = serializedObject.FindProperty("_addScore");
+        questionInfoProp = serializedObject.FindProperty("_info");
+        answersProp = serializedObject.FindProperty("_answers");
+        useTimerProp = serializedObject.FindProperty("_useTimer");
+        timerProp = serializedObject.FindProperty("_timer");
+        answerTypeProp = serializedObject.FindProperty("_answerType");
+        addScoreProp = serializedObject.FindProperty("_addScore");
         #endregion
 
         #region Get Values
@@ -45,7 +46,7 @@ public class Question_Editor : Editor {
         #endregion
     }
 
-    public override void OnInspectorGUI ()
+    public override void OnInspectorGUI()
     {
         GUILayout.Label("Question", EditorStyles.miniLabel);
         GUIStyle textAreaStyle = new GUIStyle(EditorStyles.textArea)
@@ -98,7 +99,7 @@ public class Question_Editor : Editor {
 
     #endregion
 
-    void DrawAnswers ()
+    void DrawAnswers()
     {
         EditorGUILayout.BeginVertical();
 
@@ -132,7 +133,7 @@ public class Question_Editor : Editor {
         EditorGUI.indentLevel--;
     }
 
-    void UncheckCorrectAnswers ()
+    void UncheckCorrectAnswers()
     {
         for (int i = 0; i < arraySizeProp.intValue; i++)
         {
@@ -140,7 +141,7 @@ public class Question_Editor : Editor {
         }
     }
 
-    int GetCorrectAnswersCount ()
+    int GetCorrectAnswersCount()
     {
         int count = 0;
         for (int i = 0; i < arraySizeProp.intValue; i++)

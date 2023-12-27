@@ -57,27 +57,28 @@ public struct UIElements
     [SerializeField] RectTransform finishUIElements;
     public RectTransform FinishUIElements { get { return finishUIElements; } }
 }
-public class UIManager : MonoBehaviour {
+public class UIManager : MonoBehaviour
+{
 
     #region Variables
 
-    public enum         ResolutionScreenType   { Correct, Incorrect, Finish }
+    public enum ResolutionScreenType { Correct, Incorrect, Finish }
 
     [Header("References")]
-    [SerializeField]    GameEvents             events                       = null;
+    [SerializeField] GameEvents events = null;
 
     [Header("UI Elements (Prefabs)")]
-    [SerializeField]    AnswerData             answerPrefab                 = null;
+    [SerializeField] AnswerData answerPrefab = null;
 
-    [SerializeField]    UIElements             uIElements                   = new UIElements();
+    [SerializeField] UIElements uIElements = new UIElements();
 
     [Space]
-    [SerializeField]    UIManagerParameters    parameters                   = new UIManagerParameters();
+    [SerializeField] UIManagerParameters parameters = new UIManagerParameters();
 
-    private             List<AnswerData>       currentAnswers               = new List<AnswerData>();
-    private             int                    resStateParaHash             = 0;
+    private List<AnswerData> currentAnswers = new List<AnswerData>();
+    private int resStateParaHash = 0;
 
-    private             IEnumerator            IE_DisplayTimedResolution    = null;
+    private IEnumerator IE_DisplayTimedResolution = null;
 
     #endregion
 
@@ -88,18 +89,18 @@ public class UIManager : MonoBehaviour {
     /// </summary>
     void OnEnable()
     {
-        events.UpdateQuestionUI         += UpdateQuestionUI;
-        events.DisplayResolutionScreen  += DisplayResolution;
-        events.ScoreUpdated             += UpdateScoreUI;
+        events.UpdateQuestionUI += UpdateQuestionUI;
+        events.DisplayResolutionScreen += DisplayResolution;
+        events.ScoreUpdated += UpdateScoreUI;
     }
     /// <summary>
     /// Function that is called when the behaviour becomes disabled
     /// </summary>
     void OnDisable()
     {
-        events.UpdateQuestionUI         -= UpdateQuestionUI;
-        events.DisplayResolutionScreen  -= DisplayResolution;
-        events.ScoreUpdated             -= UpdateScoreUI;
+        events.UpdateQuestionUI -= UpdateQuestionUI;
+        events.DisplayResolutionScreen -= DisplayResolution;
+        events.ScoreUpdated -= UpdateScoreUI;
     }
 
     /// <summary>
