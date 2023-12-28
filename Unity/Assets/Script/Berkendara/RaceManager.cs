@@ -39,6 +39,10 @@ public class RaceManager : MonoBehaviour
     private float currentDistance = 0f;
     private float currentTime = 0f;
 
+    private Vector3 lastCarSpawnPosition;
+    private Vector3 lastPowerupSpawnPosition;
+    private Vector3 lastObstacleSpawnPosition;
+
     private void Start()
     {
         StartCoroutine(SpawnCars());
@@ -111,8 +115,10 @@ public class RaceManager : MonoBehaviour
     {
         while (true)
         {
-            float randomX = Random.Range(spawnRangeXMin, spawnRangeXMax);
-            GameObject newCar = Instantiate(carPrefab, new Vector3(randomX, spawnRangeY, 0f), Quaternion.identity);
+            Vector3 spawnPosition = GetRandomSpawnPosition(lastCarSpawnPosition);
+            lastCarSpawnPosition = spawnPosition;
+
+            GameObject newCar = Instantiate(carPrefab, spawnPosition, Quaternion.identity);;
 
             Rigidbody2D carRigidbody2D = newCar.GetComponent<Rigidbody2D>();
             if (carRigidbody2D == null)
@@ -135,8 +141,11 @@ public class RaceManager : MonoBehaviour
     {
         while (true)
         {
-            float randomX = Random.Range(spawnRangeXMin, spawnRangeXMax);
-            GameObject newPowerup = Instantiate(powerupPrefab, new Vector3(randomX, spawnRangeY, 0f), Quaternion.identity);
+            Vector3 spawnPosition = GetRandomSpawnPosition(lastPowerupSpawnPosition);
+            lastPowerupSpawnPosition = spawnPosition;
+
+            GameObject newPowerup = Instantiate(powerupPrefab, spawnPosition, Quaternion.identity);
+
 
             Rigidbody2D powerupRigidbody2D = newPowerup.GetComponent<Rigidbody2D>();
             if (powerupRigidbody2D == null)
@@ -151,7 +160,7 @@ public class RaceManager : MonoBehaviour
 
             powerupRigidbody2D.velocity = Vector2.down * yourInitialSpeed;
 
-            yield return new WaitForSeconds(spawnInterval * 2);
+            yield return new WaitForSeconds(spawnInterval * 1.7f);
         }
     }
 
@@ -159,8 +168,11 @@ public class RaceManager : MonoBehaviour
     {
         while (true)
         {
-            float randomX = Random.Range(spawnRangeXMin, spawnRangeXMax);
-            GameObject newObstacle = Instantiate(obstaclePrefab, new Vector3(randomX, spawnRangeY, 0f), Quaternion.identity);
+            Vector3 spawnPosition = GetRandomSpawnPosition(lastObstacleSpawnPosition);
+            lastObstacleSpawnPosition = spawnPosition;
+
+            GameObject newObstacle = Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
+
 
             Rigidbody2D obstacleRigidbody2D = newObstacle.GetComponent<Rigidbody2D>();
             if (obstacleRigidbody2D == null)
@@ -178,6 +190,22 @@ public class RaceManager : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval * 1.5f);
         }
     }
+
+    private Vector3 GetRandomSpawnPosition(Vector3 lastPosition)
+    {
+        float minDistanceBetweenSpawns = 1.0f; // Ganti dengan jarak minimum yang diinginkan
+        float randomX = Random.Range(spawnRangeXMin, spawnRangeXMax);
+        float randomY = Random.Range(spawnRangeY, spawnRangeY + 0.3f); // Ganti dengan rentang y yang diinginkan
+
+        while (Vector2.Distance(new Vector2(randomX, randomY), new Vector2(lastPosition.x, lastPosition.y)) < minDistanceBetweenSpawns)
+        {
+            randomX = Random.Range(spawnRangeXMin, spawnRangeXMax);
+            randomY = Random.Range(spawnRangeY, spawnRangeY + 0.3f); // Ganti dengan rentang y yang diinginkan
+        }
+
+        return new Vector3(randomX, randomY, 0f);
+    }
+
 
     private void OnCollisionEnter2D(Collision2D col)
     {

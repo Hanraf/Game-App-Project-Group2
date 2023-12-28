@@ -34,6 +34,9 @@ public class Destroyer : MonoBehaviour
         {
             transform.position = new Vector3(clampedXPosition, clampedYPosition, transform.position.z);
         }
+        // Disable rotation
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
     }
 
 

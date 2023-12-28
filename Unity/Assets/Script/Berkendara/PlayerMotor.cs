@@ -35,6 +35,7 @@ public class PlayerMotor : MonoBehaviour
     private float currentTime = 0f;
 
     private bool isPowerupActive = false;
+    private bool isObstacleActive = false;
 
     private void Start()
     {
@@ -80,6 +81,9 @@ public class PlayerMotor : MonoBehaviour
         {
             transform.position = new Vector3(clampedXPosition, clampedYPosition, transform.position.z);
         }
+        // Disable rotation
+        // Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        // rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     private void LevelComplete()
@@ -135,6 +139,14 @@ public class PlayerMotor : MonoBehaviour
         {
             Debug.Log("Hit by Powerup!");
             Destroy(col.gameObject);
+
+            // Reset durasi obstacle jika sedang aktif
+            if (isObstacleActive)
+            {
+                StopCoroutine(DecelerateDistance());
+                isObstacleActive = false;
+            }
+
             if (!isPowerupActive)
             {
                 isPowerupActive = true;
@@ -145,9 +157,17 @@ public class PlayerMotor : MonoBehaviour
         {
             Debug.Log("Hit by Obstacle!");
             Destroy(col.gameObject);
+
+            // Reset durasi powerup jika sedang aktif
             if (isPowerupActive)
             {
+                StopCoroutine(AccelerateDistance());
                 isPowerupActive = false;
+            }
+
+            if (!isObstacleActive)
+            {
+                isObstacleActive = true;
                 StartCoroutine(DecelerateDistance());
             }
         }
@@ -155,10 +175,17 @@ public class PlayerMotor : MonoBehaviour
 
     private IEnumerator AccelerateDistance()
     {
-        float accelerationFactor = 10f;
+        float accelerationFactor = 7f;
         float accelerationDuration = 3f;
 
         float originalScrollSpeed = scrollSpeed;
+
+        // Reset durasi obstacle jika sedang aktif
+        if (isObstacleActive)
+        {
+            StopCoroutine(DecelerateDistance());
+            isObstacleActive = false;
+        }
 
         // Temporarily increase the scroll speed
         scrollSpeed *= accelerationFactor;
@@ -168,6 +195,7 @@ public class PlayerMotor : MonoBehaviour
 
         // Restore the original scroll speed
         scrollSpeed = originalScrollSpeed;
+        isPowerupActive = false;  // Reset status powerup
     }
 
     private IEnumerator DecelerateDistance()
@@ -177,6 +205,13 @@ public class PlayerMotor : MonoBehaviour
 
         float originalScrollSpeed = scrollSpeed;
 
+        // Reset durasi powerup jika sedang aktif
+        if (isPowerupActive)
+        {
+            StopCoroutine(AccelerateDistance());
+            isPowerupActive = false;
+        }
+
         // Temporarily decrease the scroll speed
         scrollSpeed /= decelerationFactor;
 
@@ -185,5 +220,6 @@ public class PlayerMotor : MonoBehaviour
 
         // Restore the original scroll speed
         scrollSpeed = originalScrollSpeed;
+        isObstacleActive = false;  // Reset status obstacle
     }
 }
