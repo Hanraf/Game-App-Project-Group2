@@ -53,5 +53,38 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/2-kamar.unity
     guid: b201d7fc13d1a1a4e9fb8b25979e99a0
+  - enabled: 1
+    path: Assets/Scene/2-ruang_keluarga.unity
+    guid: 40f7e7aa75e398742aca949961896394
+  - enabled: 1
+    path: Assets/Scene/2-Halaman.unity
+    guid: bd68cc674b3ad814abf1cfb9c3fd1c5b
+  - enabled: 1
+    path: Assets/Scene/2-berkendara.unity
+    guid: e9759b73c658c424f9b18e0294be8f80
+  - enabled: 1
+    path: Assets/Scene/2-Kampus.unity
+    guid: 1b0ab244ab3b3cf47969b3251dd23a32
+  - enabled: 1
+    path: Assets/Scene/2-Perpus.unity
+    guid: fe573cb4c26029b4db63b043c45eee22
+  - enabled: 1
+    path: Assets/Scene/3-kamar.unity
+    guid: 83b269cd7cd364143b6f5f9f2875fc6f
+  - enabled: 1
+    path: Assets/Scene/3-ruang_keluarga.unity
+    guid: 9eedb37114afb7b4d87e3dde3acf06c1
+  - enabled: 1
+    path: Assets/Scene/3-Halaman.unity
+    guid: 463a7b43a7c9e9a4b8aea56cb74f7a7a
+  - enabled: 1
+    path: Assets/Scene/3-berkendara.unity
+    guid: fee3818b5fec88a4ba5315ab7f41934a
+  - enabled: 1
+    path: Assets/Scene/3-Kampus.unity
+    guid: a65862d08b25b7e4e9b895e58c952d88
+  - enabled: 1
+    path: Assets/Scene/Ending.unity
+    guid: 3aad38ad2fd5576418a919afc0909312
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2ea68e328b9896345b249167d5c7c22b, type: 2}

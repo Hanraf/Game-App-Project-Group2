@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    [Header("Spawn Settings")]
     public GameObject carPrefab;
     public GameObject obstaclePrefab;
     public GameObject powerUpPrefab;
+    public float spawnInterval = 2f;
 
     void Start()
     {
@@ -21,13 +23,18 @@ public class SpawnManager : MonoBehaviour
                 float randomX = Random.Range(-5, 4);
                 float spawnY = 6f;
 
-                Instantiate(carPrefab, new Vector3(randomX, spawnY, 0), Quaternion.identity);
-                Instantiate(obstaclePrefab, new Vector3(randomX, spawnY, 0), Quaternion.identity);
+                
+                
                 GameObject powerUp = Instantiate(powerUpPrefab, new Vector3(randomX, spawnY, 0), Quaternion.identity);
-                Destroy(powerUp, 5f);  // Adjust the time to destroy the power-up as needed
+                GameObject newCar = Instantiate(carPrefab, new Vector3(randomX, spawnY, 0), Quaternion.identity);
+                GameObject newobstacle = Instantiate(obstaclePrefab, new Vector3(randomX, spawnY, 0), Quaternion.identity);
+                Destroy(powerUp);  
+                Destroy(newobstacle);
             }
 
-            yield return new WaitForSeconds(Random.Range(1, 3));
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
+
+    
 }

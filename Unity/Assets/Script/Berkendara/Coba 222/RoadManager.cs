@@ -10,6 +10,7 @@ public class RoadManager : MonoBehaviour
     private Renderer roadRenderer;
     public motorController playerMotor;
     public TextMeshProUGUI distanceText;
+    private GameManager gameManager;
 
     void Start()
     {

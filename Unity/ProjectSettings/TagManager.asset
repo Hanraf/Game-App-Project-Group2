@@ -9,6 +9,9 @@ TagManager:
   - LevelTransitionZone
   - Ibu
   - NPC
+  - Car
+  - Powerup
+  - Obstacle
   layers:
   - Default
   - TransparentFX
