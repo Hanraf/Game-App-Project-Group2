@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5.0f; // Kecepatan pergerakan pemain
+    public float moveSpeed = 0f; // Kecepatan pergerakan pemain
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private bool isDialogActive = false;

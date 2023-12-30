@@ -28,7 +28,7 @@ MonoBehaviour:
   - _info: 8%
     _isCorrect: 1
     _answerScore: 10
-  _useTimer: 0
-  _timer: 0
+  _useTimer: 1
+  _timer: 20
   _answerType: 1
   _addScore: 0

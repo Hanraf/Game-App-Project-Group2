@@ -28,7 +28,7 @@ MonoBehaviour:
       kerja
     _isCorrect: 1
     _answerScore: 4
-  _useTimer: 0
-  _timer: 120
+  _useTimer: 1
+  _timer: 20
   _answerType: 2
   _addScore: 0

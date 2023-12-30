@@ -1179,7 +1179,7 @@ MonoBehaviour:
   gameTime: 80
   timerText: {fileID: 549306534}
   distanceText: {fileID: 1711327790}
-  gameOverSceneName: 3-kamar
+  gameOverSceneName: 3-Halamanr
   scrollSpeed: 4
   roadRenderer: {fileID: 912583246}
 --- !u!1 &1711327788

@@ -27,7 +27,7 @@ MonoBehaviour:
   - _info: Mengatakan hal yang baik terlebih dahulu lalu memberitahukan kekurangannya
     _isCorrect: 1
     _answerScore: 5
-  _useTimer: 0
-  _timer: 0
+  _useTimer: 1
+  _timer: 20
   _answerType: 2
   _addScore: 0
