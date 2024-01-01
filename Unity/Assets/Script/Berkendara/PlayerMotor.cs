@@ -28,7 +28,6 @@ public class PlayerMotor : MonoBehaviour
 
     [Header("Road Settings")]
     public float scrollSpeed = 5f;
-    private float lastFrameTime = 0f;
     public Renderer roadRenderer;
 
     private float currentDistance = 0f;
@@ -37,15 +36,17 @@ public class PlayerMotor : MonoBehaviour
     private bool isPowerupActive = false;
     private bool isObstacleActive = false;
 
+    private float lastFrameTime = 0f;  // Menambahkan deklarasi lastFrameTime
+
+    private Coroutine powerupCoroutine;
+    private Coroutine obstacleCoroutine;
+
     private void Start()
     {
+        currentDistance = 0f;
+        ResetPlayerState();
         UpdateDistanceText();
         currentTime = gameTime;
-
-        if (roadRenderer == null)
-        {
-            Debug.LogError("Renderer component not found on the road object.");
-        }
     }
 
     // Update is called once per frame
@@ -81,18 +82,26 @@ public class PlayerMotor : MonoBehaviour
         {
             transform.position = new Vector3(clampedXPosition, clampedYPosition, transform.position.z);
         }
-        // Disable rotation
-        // Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        // rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     private void LevelComplete()
     {
+        ResetPlayerState();
         SceneManager.LoadScene(levelCompleteSceneName);
+    }
+
+    private void ResetPlayerState()
+    {
+        currentDistance = 0f;
+        scrollSpeed = 4f;
+        lastFrameTime = 0f;
+        isPowerupActive = false;
+        isObstacleActive = false;
     }
 
     public void GameOver()
     {
+        ResetPlayerState();
         SceneManager.LoadScene(gameOverSceneName);
     }
 
@@ -112,23 +121,21 @@ public class PlayerMotor : MonoBehaviour
 
     private void ScrollRoad()
     {
-        float currentTime = Time.time;
-        float deltaTime = currentTime - lastFrameTime;
-        lastFrameTime = currentTime;
-
-        float offset = currentTime * scrollSpeed;
-        float deltaOffset = deltaTime * scrollSpeed;
-
+        float deltaOffset = Time.deltaTime * scrollSpeed;
         currentDistance += deltaOffset;
 
+        float offset = currentDistance;
         roadRenderer.material.mainTextureOffset = new Vector2(0, offset);
+
+        if (currentDistance >= levelDistance)
+        {
+            LevelComplete();
+        }
     }
+
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("Collision detected with: " + col.gameObject.tag);
-        Debug.Log("Collision detected!");
-
         if (col.gameObject.CompareTag("Car"))
         {
             Debug.Log("Hit by Car!");
@@ -140,17 +147,12 @@ public class PlayerMotor : MonoBehaviour
             Debug.Log("Hit by Powerup!");
             Destroy(col.gameObject);
 
-            // Reset durasi obstacle jika sedang aktif
-            if (isObstacleActive)
-            {
-                StopCoroutine(DecelerateDistance());
-                isObstacleActive = false;
-            }
+            StopObstacleCoroutine();
 
             if (!isPowerupActive)
             {
                 isPowerupActive = true;
-                StartCoroutine(AccelerateDistance());
+                powerupCoroutine = StartCoroutine(AccelerateDistance());
             }
         }
         else if (col.gameObject.CompareTag("Obstacle"))
@@ -158,18 +160,31 @@ public class PlayerMotor : MonoBehaviour
             Debug.Log("Hit by Obstacle!");
             Destroy(col.gameObject);
 
-            // Reset durasi powerup jika sedang aktif
-            if (isPowerupActive)
-            {
-                StopCoroutine(AccelerateDistance());
-                isPowerupActive = false;
-            }
+            StopPowerupCoroutine();
 
             if (!isObstacleActive)
             {
                 isObstacleActive = true;
-                StartCoroutine(DecelerateDistance());
+                obstacleCoroutine = StartCoroutine(DecelerateDistance());
             }
+        }
+    }
+
+    private void StopPowerupCoroutine()
+    {
+        if (isPowerupActive)
+        {
+            StopCoroutine(powerupCoroutine);
+            isPowerupActive = false;
+        }
+    }
+
+    private void StopObstacleCoroutine()
+    {
+        if (isObstacleActive)
+        {
+            StopCoroutine(obstacleCoroutine);
+            isObstacleActive = false;
         }
     }
 
@@ -180,22 +195,14 @@ public class PlayerMotor : MonoBehaviour
 
         float originalScrollSpeed = scrollSpeed;
 
-        // Reset durasi obstacle jika sedang aktif
-        if (isObstacleActive)
-        {
-            StopCoroutine(DecelerateDistance());
-            isObstacleActive = false;
-        }
+        StopObstacleCoroutine();
 
-        // Temporarily increase the scroll speed
         scrollSpeed *= accelerationFactor;
 
-        // Wait for the specified duration
         yield return new WaitForSeconds(accelerationDuration);
 
-        // Restore the original scroll speed
         scrollSpeed = originalScrollSpeed;
-        isPowerupActive = false;  // Reset status powerup
+        isPowerupActive = false;
     }
 
     private IEnumerator DecelerateDistance()
@@ -205,21 +212,13 @@ public class PlayerMotor : MonoBehaviour
 
         float originalScrollSpeed = scrollSpeed;
 
-        // Reset durasi powerup jika sedang aktif
-        if (isPowerupActive)
-        {
-            StopCoroutine(AccelerateDistance());
-            isPowerupActive = false;
-        }
+        StopPowerupCoroutine();
 
-        // Temporarily decrease the scroll speed
         scrollSpeed /= decelerationFactor;
 
-        // Wait for the specified duration
         yield return new WaitForSeconds(decelerationDuration);
 
-        // Restore the original scroll speed
         scrollSpeed = originalScrollSpeed;
-        isObstacleActive = false;  // Reset status obstacle
+        isObstacleActive = false;
     }
 }

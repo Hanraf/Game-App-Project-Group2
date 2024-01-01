@@ -51,10 +51,10 @@ public class RaceManager : MonoBehaviour
         UpdateDistanceText();
         currentTime = gameTime;
 
-        if (roadRenderer == null)
-        {
-            Debug.LogError("Renderer component not found on the road object.");
-        }
+        // if (roadRenderer == null)
+        // {
+        //     Debug.LogError("Renderer component not found on the road object.");
+        // }
     }
 
     private void Update()
@@ -209,8 +209,8 @@ public class RaceManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("Collision detected with: " + col.gameObject.tag);
-        Debug.Log("Collision detected!");
+        // Debug.Log("Collision detected with: " + col.gameObject.tag);
+        // Debug.Log("Collision detected!");
 
         if (col.gameObject.CompareTag("Car"))
         {
