@@ -1101,6 +1101,22 @@ PrefabInstance:
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 1456791141}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: choices.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: choices.Array.data[0]
+      value: 
+      objectReference: {fileID: 369246024}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: choices.Array.data[1]
+      value: 
+      objectReference: {fileID: 239748305}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: choices.Array.data[2]
+      value: 
+      objectReference: {fileID: 2083119818}
     - target: {fileID: 1445034669430373113, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -1386,6 +1402,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &239748305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6300417342110498885, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+  m_PrefabInstance: {fileID: 1442037995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &243371992 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+  m_PrefabInstance: {fileID: 133439122}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab139cbb500fe241aa19fe9d96270ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &266052054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1573,6 +1605,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b64e472ee94570439371abf879d1163, type: 3}
+--- !u!1 &369246024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4513921440567712282, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+  m_PrefabInstance: {fileID: 1442037995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &660633452 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3984101998778763147, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
@@ -1641,6 +1678,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas Dialogue NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 1686208864823461873, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 243371992}
+    - target: {fileID: 3214851271734407009, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 243371992}
+    - target: {fileID: 4935495449451144215, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 243371992}
     - target: {fileID: 9092936398682122933, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1797,8 +1846,8 @@ MonoBehaviour:
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -1680190386980627800, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 7082393021263813882, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
@@ -1806,7 +1855,7 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
 --- !u!1001 &1502534383
@@ -9191,6 +9240,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2083119818 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7268311419005123684, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+  m_PrefabInstance: {fileID: 1442037995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2108412667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9214,7 +9268,7 @@ PrefabInstance:
     - target: {fileID: 5162146856214509891, guid: 8b64e472ee94570439371abf879d1163, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 57de4afdf43bb1248ba08ad8b22d1ba6, type: 3}
+      objectReference: {fileID: 4900000, guid: 7cab9bd7b783c3143a926c67a46ad141, type: 3}
     - target: {fileID: 7181857882803832502, guid: 8b64e472ee94570439371abf879d1163, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.74

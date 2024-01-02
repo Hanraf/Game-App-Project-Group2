@@ -32,6 +32,15 @@ public class CharacterController2D : MonoBehaviour
         UpdateAnimator();
     }
 
+    private void FixedUpdate()
+    {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
+        HandleMovement();
+    }
+
     private void HandleMovement()
     {
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();

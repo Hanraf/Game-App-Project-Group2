@@ -76,7 +76,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode() 
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
