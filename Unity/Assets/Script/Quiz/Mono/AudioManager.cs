@@ -65,12 +65,22 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        if (Instance != null)
-        { Destroy(gameObject); }
+        // if (Instance != null)
+        // { Destroy(gameObject); }
+        // else
+        // {
+        //     Instance = this;
+        //     DontDestroyOnLoad(gameObject);
+        // }
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
         else
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            InitSounds();
         }
         InitSounds();
     }
@@ -98,6 +108,7 @@ public class AudioManager : MonoBehaviour
             source.name = sound.Name;
 
             sound.Source = source;
+            Debug.Log("Initialized sound: " + sound.Name);
         }
     }
 
