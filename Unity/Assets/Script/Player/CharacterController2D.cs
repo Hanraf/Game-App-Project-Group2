@@ -53,8 +53,8 @@ public class CharacterController2D : MonoBehaviour
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
 
         // Set Speed parameter based on horizontal or vertical movement
-        float speed = Mathf.Max(Mathf.Abs(moveDirection.x), Mathf.Abs(moveDirection.y));
-        animator.SetFloat("Speed", speed);
+        // float speed = Mathf.Max(Mathf.Abs(moveDirection.x), Mathf.Abs(moveDirection.y));
+        // animator.SetFloat("Speed", speed);
 
         // Set facing direction parameters
         if (moveDirection.x > 0)

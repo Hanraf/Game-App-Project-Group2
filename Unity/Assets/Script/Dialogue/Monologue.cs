@@ -5,7 +5,7 @@ using TMPro;
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
-    public string [] lines;
+    public string[] lines;
     public float textSpeed;
     private int index;
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+        if (InputManager.GetInstance().GetSubmitPressed())
         {
             if (textComponent.text == lines[index])
             {

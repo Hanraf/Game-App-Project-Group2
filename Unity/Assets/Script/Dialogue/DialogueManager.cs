@@ -10,6 +10,10 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Params")]
     [SerializeField] private float typingSpeed = 0.04f;
+
+    [Header("Load Globals JSON")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
+
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject continueIcon;
@@ -35,6 +39,8 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
 
+    private DialogueVariables dialogueVariables;
+
     private void Awake() 
     {
         if (instance != null)
@@ -42,6 +48,8 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         }
         instance = this;
+
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
     }
 
     public static DialogueManager GetInstance() 
@@ -88,6 +96,8 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        dialogueVariables.StartListening(currentStory);
+        
         // reset portrait, layout, and speaker
         displayNameText.text = "???";
         portraitAnimator.Play("default");
@@ -99,6 +109,8 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode() 
     {
         yield return new WaitForSeconds(0.3f);
+
+        dialogueVariables.StopListening(currentStory);
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -126,8 +138,9 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator DisplayLine(string line) 
     {
-        // empty the dialogue text
-        dialogueText.text = "";
+        // set the text to the full line, but set the visible characters to 0
+        dialogueText.text = line;
+        dialogueText.maxVisibleCharacters = 0;
 
         // hide items while text is typing
         continueIcon.SetActive(false);
@@ -143,14 +156,13 @@ public class DialogueManager : MonoBehaviour
             // if the submit button is pressed, finish up displaying the line right away
             if (InputManager.GetInstance().GetSubmitPressed()) 
             {
-                dialogueText.text = line;
+                dialogueText.maxVisibleCharacters = line.Length;
                 break;
             }
             // check for rich text tag, if found, add it without waiting
             if (letter == '<' || isAddingRichTextTag) 
             {
                 isAddingRichTextTag = true;
-                dialogueText.text += letter;
                 if (letter == '>')
                 {
                     isAddingRichTextTag = false;
@@ -159,7 +171,7 @@ public class DialogueManager : MonoBehaviour
             // if not rich text, add the next letter and wait a small time
             else 
             {
-                dialogueText.text += letter;
+                dialogueText.maxVisibleCharacters++;
                 yield return new WaitForSeconds(typingSpeed);
             }
         }
@@ -261,4 +273,25 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public Ink.Runtime.Object GetVariableState(string variableName) 
+    {
+        Ink.Runtime.Object variableValue = null;
+        dialogueVariables.variables.TryGetValue(variableName, out variableValue);
+        if (variableValue == null) 
+        {
+            Debug.LogWarning("Ink Variable was found to be null: " + variableName);
+        }
+        return variableValue;
+    }
+
+    // This method will get called anytime the application exits.
+    // Depending on your game, you may want to save variable state in other places.
+    public void OnApplicationQuit() 
+    {
+        // if (dialogueVariables !=null)
+        // {
+        //     dialogueVariables.SaveVariables();
+        // }
+        dialogueVariables.SaveVariables();
+    }
 }
