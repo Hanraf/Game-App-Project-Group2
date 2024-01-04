@@ -1484,13 +1484,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 566408787626883196, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 566408787626883196, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.53
+      objectReference: {fileID: 0}
     - target: {fileID: 1378658651829746551, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_Name
       value: NPC-Ayah (coba)
       objectReference: {fileID: 0}
     - target: {fileID: 2246016849579608842, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3597221091855903803, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_LocalScale.x
@@ -1502,16 +1510,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960606404653315776, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.05
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 4960606404653315776, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.71
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 5114487801469957351, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 4c31523bc5dc1ab4dba33e6ea7c831f7, type: 2}
+      objectReference: {fileID: 9100000, guid: 31ea8943bd6dad547b10906c5532ed86, type: 2}
     - target: {fileID: 5162146856214509891, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: emoteAnimator
       value: 
@@ -1692,6 +1700,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1297067048 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5114487801469957351, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
+  m_PrefabInstance: {fileID: 1942669253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1442037995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7492,16 +7505,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2246016849579608842, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5114487801469957351, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 4c31523bc5dc1ab4dba33e6ea7c831f7, type: 2}
+      objectReference: {fileID: 9100000, guid: 31ea8943bd6dad547b10906c5532ed86, type: 2}
     - target: {fileID: 5162146856214509891, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: inkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 57de4afdf43bb1248ba08ad8b22d1ba6, type: 3}
+    - target: {fileID: 5162146856214509891, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
+      propertyPath: emoteAnimator
+      value: 
+      objectReference: {fileID: 1297067048}
     - target: {fileID: 7181857882803832502, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.95
