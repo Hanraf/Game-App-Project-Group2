@@ -1,14 +1,21 @@
+INCLUDE ../globals.ink
 
-Ibu : Selamat pagi, nak. Sepertinya hari ini kamu begitu bersemangat
-Putra : Iya bu, aku sangat bersemangat~!! #speaker:Putra #portrait:Putra #layout:left 
-Putra : Aku akan pergi ke perpustakaan kampus untuk belajar karena ujian sudah dekat #speaker:Putra #portrait:Putra #layout:left 
- Ibu : Ah, anakku rajin sekali. Jangan lupa istirahat yang cukup dan jaga kesehatanmu ya nak. Ibu akan selalu mendoakan yang terbaik untukmu~ 
+-> main
+
+=== main ===
+Selamat pagi, nak. Sepertinya hari ini kamu begitu bersemangat #speaker:Ibu #portrait:Ibu #layout:right
+
++ [Iya bu, aku sangat bersemangat~!!] #speaker:Putra #portrait:Putra #layout:left
+    Aku akan pergi ke perpustakaan kampus untuk belajar karena ujian sudah dekat
     
-Putra : Tidak juga bu… #speaker:Putra #portrait:Putra #layout:left 
-Putra : Sepertinya hari ini akan jadi hari yang cukup sibuk dan melelahkan” #speaker:Putra #portrait:Putra #layout:left 
-Putra : Tapi aku tetap akan belajar kok, hari ini ada rencana belajar di perpustakaan #speaker:Putra #portrait:Putra #layout:left 
-Ibu : Semangat ya, ibu senang kalau melihat kamu berusaha yang terbaik. Ibu akan selalu mendoakan agar hal - hal baik selalu datang.
+    Ah, anakku rajin sekali. Jangan lupa istirahat yang cukup dan jaga kesehatanmu ya nak. Ibu akan selalu mendoakan yang terbaik untukmu~ #speaker:Ibu #portrait:Ibu #layout:right
+    
++ [Tidak juga bu…] #speaker:Putra #portrait:Putra #layout:left
+    Sepertinya hari ini akan jadi hari yang cukup sibuk dan melelahkan 
+    Tapi aku tetap akan belajar kok, hari ini ada rencana belajar di perpustakaan kampus
+    
+    Semangat ya, ibu senang kalau melihat kamu berusaha yang terbaik. Ibu akan selalu mendoakan agar hal - hal baik selalu datang #speaker:Ibu #portrait:Ibu #layout:right
 
-Putra: Terima kasih, Bu. Aku akan berusaha yang terbaik!! #speaker:Putra #portrait:Putra #layout:left 
+- Terima kasih, Bu. Aku akan berusaha yang terbaik!! #speaker:Putra #portrait:Putra #layout:left
 
-
+-> END
