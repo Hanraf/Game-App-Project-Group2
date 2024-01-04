@@ -1,47 +1,13 @@
 using UnityEngine;
-using TMPro;
 
-public class EndingPoints : MonoBehaviour
+[CreateAssetMenu(fileName = "EndingPoints", menuName = "ScriptableObjects/EndingPoints", order = 1)]
+public class EndingPoints : ScriptableObject
 {
-    [SerializeField] private TextMeshProUGUI pointsText;
+    [SerializeField] private int totalPoints;
 
-    private const string PlayerPrefsKey = "TotalPoints";
-    private int totalPoints = 0;
-
-    private void Start()
+    public int TotalPoints
     {
-        LoadTotalPoints();
-        UpdateUI();
-    }
-
-    public void AddPoints(int points)
-    {
-        totalPoints += points;
-        Debug.Log("Total Points Updated: " + totalPoints); // Add this line
-        SaveTotalPoints();
-        UpdateUI();
-    }
-
-
-    private void UpdateUI()
-    {
-        if (pointsText != null)
-        {
-            pointsText.text = "Total Points: " + totalPoints;
-        }
-    }
-
-    public void SaveTotalPoints()
-    {
-        PlayerPrefs.SetInt(PlayerPrefsKey, totalPoints);
-        PlayerPrefs.Save();
-    }
-
-    private void LoadTotalPoints()
-    {
-        if (PlayerPrefs.HasKey(PlayerPrefsKey))
-        {
-            totalPoints = PlayerPrefs.GetInt(PlayerPrefsKey);
-        }
+        get { return totalPoints; }
+        set { totalPoints = value; }
     }
 }

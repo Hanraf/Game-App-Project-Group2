@@ -218,8 +218,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typingSpeed: 0.04
   loadGlobalsJSON: {fileID: 4900000, guid: 3db0cec7758cff7428f4f447a13727fc, type: 3}
+  endingPoints: {fileID: 11400000, guid: acdc0e28314ec5d439d92be663916c73, type: 2}
   monologs:
-  - {fileID: 4900000, guid: 6afdf89c8e6b8c44d9f6b4f4e3e388de, type: 3}
+  - {fileID: 4900000, guid: 61b0c84fe3978354d912576cd965ebdf, type: 3}
   dialoguePanel: {fileID: 0}
   continueIcon: {fileID: 0}
   dialogueText: {fileID: 0}

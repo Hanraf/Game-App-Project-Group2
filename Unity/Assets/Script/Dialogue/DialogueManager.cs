@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Load Globals JSON")]
     [SerializeField] private TextAsset loadGlobalsJSON;
+    [SerializeField] private EndingPoints endingPoints;
 
     [Header("Monolog")]
     [SerializeField] private TextAsset[] monologs;
@@ -315,40 +316,54 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void HandleTags(List<string> currentTags)
+{
+    // loop through each tag and handle it accordingly
+    foreach (string tag in currentTags)
     {
-        // loop through each tag and handle it accordingly
-        foreach (string tag in currentTags)
+        // parse the tag
+        string[] splitTag = tag.Split(':');
+        if (splitTag.Length != 2)
         {
-            // parse the tag
-            string[] splitTag = tag.Split(':');
-            if (splitTag.Length != 2)
-            {
-                Debug.LogError("Tag could not be appropriately parsed: " + tag);
-            }
-            string tagKey = splitTag[0].Trim();
-            string tagValue = splitTag[1].Trim();
+            Debug.LogError("Tag could not be appropriately parsed: " + tag);
+        }
+        string tagKey = splitTag[0].Trim();
+        string tagValue = splitTag[1].Trim();
 
-            // handle the tag
-            switch (tagKey)
-            {
-                case SPEAKER_TAG:
-                    displayNameText.text = tagValue;
-                    break;
-                case PORTRAIT_TAG:
-                    portraitAnimator.Play(tagValue);
-                    break;
-                case LAYOUT_TAG:
-                    layoutAnimator.Play(tagValue);
-                    break;
-                case AUDIO_TAG:
-                    SetCurrentAudioInfo(tagValue);
-                    break;
-                default:
-                    Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
-                    break;
-            }
+        // handle the tag
+        switch (tagKey)
+        {
+            case SPEAKER_TAG:
+                displayNameText.text = tagValue;
+                break;
+            case PORTRAIT_TAG:
+                portraitAnimator.Play(tagValue);
+                break;
+            case LAYOUT_TAG:
+                layoutAnimator.Play(tagValue);
+                break;
+            case AUDIO_TAG:
+                SetCurrentAudioInfo(tagValue);
+                break;
+            case "nilai": // Handle the "nilai" tag
+                int choiceValue;
+                if (int.TryParse(tagValue, out choiceValue))
+                {
+                    endingPoints.TotalPoints += choiceValue;
+                    Debug.Log("Choice Value: " + choiceValue);
+                    Debug.Log("Total Points: " + endingPoints.TotalPoints);
+                }
+                else
+                {
+                    Debug.LogWarning("Failed to parse 'nilai' tag value: " + tagValue);
+                }
+                break;
+            default:
+                Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
+                break;
         }
     }
+}
+
 
     private void DisplayChoices()
     {
@@ -392,10 +407,31 @@ public class DialogueManager : MonoBehaviour
         if (canContinueToNextLine)
         {
             currentStory.ChooseChoiceIndex(choiceIndex);
-            // NOTE: The below two lines were added to fix a bug after the Youtube video was made
-            InputManager.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
+
+            // Ambil nilai dari pilihan dan tambahkan ke total
+            int choiceValue = GetChoiceValue(currentStory.currentChoices[choiceIndex]);
+            endingPoints.TotalPoints += choiceValue;
+
+            Debug.Log("Choice Value: " + choiceValue);
+            Debug.Log("Total Points: " + endingPoints.TotalPoints);
+
+            InputManager.GetInstance().RegisterSubmitPressed();
             ContinueStory();
         }
+    }
+
+    private int GetChoiceValue(Choice choice)
+    {
+        int choiceValue = 0;
+        string[] tags = choice.text.Split('#');
+        foreach (string tag in tags)
+        {
+            if (tag.StartsWith("nilai:"))
+            {
+                int.TryParse(tag.Substring(6), out choiceValue);
+            }
+        }
+        return choiceValue;
     }
 
     public Ink.Runtime.Object GetVariableState(string variableName)
