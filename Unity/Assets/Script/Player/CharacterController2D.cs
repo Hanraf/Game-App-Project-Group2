@@ -6,8 +6,8 @@ public class CharacterController2D : MonoBehaviour
 {
     [Header("Movement Params")]
     public float runSpeed = 6.0f;
-    public float jumpSpeed = 8.0f;
-    public float gravityScale = 20.0f;
+    public float jumpSpeed = 0f;
+    public float gravityScale = 0f;
     public Animator animator;
 
     private BoxCollider2D coll;
@@ -21,16 +21,16 @@ public class CharacterController2D : MonoBehaviour
         rb.gravityScale = gravityScale;
     }
 
-    private void Update()
-    {
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
-        {
-            return;
-        }
+    // private void Update()
+    // {
+    //     if (DialogueManager.GetInstance().dialogueIsPlaying)
+    //     {
+    //         return;
+    //     }
 
-        HandleMovement();
-        UpdateAnimator();
-    }
+    //     HandleMovement();
+    //     UpdateAnimator();
+    // }
 
     private void FixedUpdate()
     {
@@ -39,13 +39,16 @@ public class CharacterController2D : MonoBehaviour
             return;
         }
         HandleMovement();
+        UpdateAnimator();
     }
 
     private void HandleMovement()
     {
+        // Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
+        // Vector2 velocity = new Vector2(moveDirection.x * runSpeed, moveDirection.y * runSpeed);
+        // rb.velocity = velocity;
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
-        Vector2 velocity = new Vector2(moveDirection.x * runSpeed, moveDirection.y * runSpeed);
-        rb.velocity = velocity;
+        rb.velocity = new Vector2(moveDirection.x * runSpeed,moveDirection.y * runSpeed);
     }
 
     private void UpdateAnimator()
