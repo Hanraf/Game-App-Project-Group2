@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768bf03c6f0d29e43ba9a0a35bc1e0ab, type: 3}
+  m_Name: coba_2
+  m_EditorClassIdentifier: 
+  id: coba_2
+  dialogueTypingSoundClips:
+  - {fileID: 8300000, guid: 86c21c1964e73e74aa6c3fe73da51a22, type: 3}
+  frequencyLevel: 2
+  minPitch: 1
+  maxPitch: 1.25
+  stopAudioSource: 1

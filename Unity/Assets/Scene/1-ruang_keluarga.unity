@@ -1090,6 +1090,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: maxPitch
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: continueIcon
       value: 
       objectReference: {fileID: 1977304306}
@@ -1106,9 +1110,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1442037996}
     - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: makePredictable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: stopAudioSource
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: defaultAudioInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 6268f9bd8a2afbb46a119a9d25322c7b, type: 2}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: portraitAnimator
       value: 
       objectReference: {fileID: 835001185}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: audioInfos.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: choices.Array.data[0]
       value: 
@@ -1121,17 +1141,41 @@ PrefabInstance:
       propertyPath: choices.Array.data[2]
       value: 
       objectReference: {fileID: 2083119818}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: dialogueTypingSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 205c3ae878b297d478edbd26eeb5876e, type: 3}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: audioInfos.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 368614963f5282d4d988ea3d3fe19a14, type: 2}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: audioInfos.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f8faf9693491324ca78d0f760e16232, type: 2}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: dialogueTypingSoundClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: dialogueTypingSoundClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 36e4bd27213a13b4ea81c0e6bb654e07, type: 3}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: dialogueTypingSoundClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 36e4bd27213a13b4ea81c0e6bb654e07, type: 3}
     - target: {fileID: 1445034669430373113, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
     - target: {fileID: 4695258880788612248, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.21004
+      value: 14.94
       objectReference: {fileID: 0}
     - target: {fileID: 4695258880788612248, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 49.792545
+      value: 50.6
       objectReference: {fileID: 0}
     - target: {fileID: 4695258880788612248, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9394,7 +9438,7 @@ PrefabInstance:
     - target: {fileID: 5162146856214509891, guid: 8b64e472ee94570439371abf879d1163, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 57de4afdf43bb1248ba08ad8b22d1ba6, type: 3}
+      objectReference: {fileID: 4900000, guid: 3449ca46d2b918c4d9aab52121613e4d, type: 3}
     - target: {fileID: 7181857882803832502, guid: 8b64e472ee94570439371abf879d1163, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.74
