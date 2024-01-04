@@ -24,6 +24,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
+    private TextMeshProUGUI[] choicesText;
 
     [Header("Audio")]
     [SerializeField] private DialogueAudioInfoSO defaultAudioInfo;
@@ -33,8 +34,6 @@ public class DialogueManager : MonoBehaviour
     private DialogueAudioInfoSO currentAudioInfo;
     private Dictionary<string, DialogueAudioInfoSO> audioInfoDictionary;
     private AudioSource audioSource;
-
-    private TextMeshProUGUI[] choicesText;
 
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
