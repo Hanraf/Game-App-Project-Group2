@@ -66,7 +66,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: IsFacingRight
+    m_ConditionEvent: IsFacingLeft
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 653309179652114445}
@@ -382,7 +382,7 @@ AnimatorStateMachine:
     m_Position: {x: 603.51764, y: 21.576782, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 653309179652114445}
-    m_Position: {x: 610.5446, y: 98.87451, z: 0}
+    m_Position: {x: 610, y: 100, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

@@ -14,6 +14,10 @@ public class DialogueManager : MonoBehaviour
     [Header("Load Globals JSON")]
     [SerializeField] private TextAsset loadGlobalsJSON;
 
+    [Header("Monolog")]
+    [SerializeField] private TextAsset[] monologs;
+    private int currentMonologIndex = 0;
+
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject continueIcon;
@@ -90,6 +94,12 @@ public class DialogueManager : MonoBehaviour
         }
 
         InitializeAudioInfoDictionary();
+
+        // Start Monolog jika ada
+        if (monologs != null && monologs.Length > 0)
+        {
+            StartCoroutine(StartMonolog());
+        }
     }
 
     private void InitializeAudioInfoDictionary()
@@ -409,4 +419,23 @@ public class DialogueManager : MonoBehaviour
         // }
         dialogueVariables.SaveVariables();
     }
+
+    private IEnumerator StartMonolog()
+    {
+        // Delay untuk memberikan waktu objek lain di scene untuk bersiap
+        yield return new WaitForSeconds(0.1f);
+
+        foreach (TextAsset monolog in monologs)
+        {
+            EnterDialogueMode(monolog, null);
+            // Tunggu hingga monolog selesai
+            while (dialogueIsPlaying)
+            {
+                yield return null;
+            }
+            // Delay sebentar antar monolog (opsional)
+            yield return new WaitForSeconds(1.0f);
+        }
+    }
+
 }
