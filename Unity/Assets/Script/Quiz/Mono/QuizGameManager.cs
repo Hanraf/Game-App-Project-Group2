@@ -13,6 +13,7 @@ public class QuizGameManager : MonoBehaviour
     public Question[] Questions { get { return _questions; } }
 
     [SerializeField] GameEvents events = null;
+    [SerializeField] private ScoreManager scoreManager = null;
 
     [SerializeField] Animator timerAnimtor = null;
     [SerializeField] TextMeshProUGUI timerText = null;
@@ -59,6 +60,10 @@ public class QuizGameManager : MonoBehaviour
     void Start()
     {
         events.StartupHighscore = PlayerPrefs.GetInt(GameUtility.SavePrefKey);
+        if (events.scoreManager == null)
+        {
+            events.scoreManager = scoreManager;
+        }
         timerDefaultColor = timerText.color;
         LoadQuestions();
         timerStateParaHash = Animator.StringToHash("TimerState");
@@ -123,6 +128,16 @@ public class QuizGameManager : MonoBehaviour
         }
     }
 
+    private void UpdateTotalScore(int add)
+    {
+        events.scoreManager.AddToTotalScore(add);
+
+        if (events.TotalScoreUpdated != null)
+        {
+            events.TotalScoreUpdated();
+        }
+    }
+
     public void Accept()
     {
         UpdateTimer(false);
@@ -134,6 +149,7 @@ public class QuizGameManager : MonoBehaviour
         int answerScore = CalculateAnswerScores();
 
         UpdateScore(addScore + answerScore);
+        UpdateTotalScore(addScore + answerScore);
 
         if (IsFinished)
         {

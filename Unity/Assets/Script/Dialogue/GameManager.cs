@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     // Objek ini menyimpan total poin
     [SerializeField] private EndingPoints endingPoints;
+    [SerializeField] private ScoreManager scoreManager;
 
     private void Awake()
     {
@@ -25,17 +26,20 @@ public class GameManager : MonoBehaviour
     {
         // Inisialisasi total poin jika perlu
         endingPoints.ResetTotalPoints();
+        scoreManager.ResetTotalScore();
     }
 
     // Metode ini dipanggil saat sesi gameplay dimulai
     public void StartNewSession()
     {
         endingPoints.ResetTotalPoints();
+        scoreManager.ResetTotalScore();
     }
 
     // Metode ini untuk mendapatkan total poin
     public int GetTotalPoints()
     {
         return endingPoints.TotalPoints;
+        return scoreManager.TotalScore;
     }
 }

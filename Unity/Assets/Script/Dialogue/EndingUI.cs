@@ -1,28 +1,34 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
-using UnityEngine.EventSystems;
 
 public class EndingUI : MonoBehaviour
 {
     [SerializeField] private EndingPoints endingPoints;
     [SerializeField] private TextMeshProUGUI totalPointsText;
+    [SerializeField] private TextMeshProUGUI totalScoreQuizText; // New field for displaying total score from quiz
+    [SerializeField] private ScoreManager quizScoreManager; // Reference to the ScoreManager for quiz
+
     [Header("Monologs")]
     [SerializeField] private TextAsset[] monologs;
     private int currentMonologIndex = 0;
 
     private void OnEnable()
-    {
-        // Subscribe to the event when the total points are updated
-        endingPoints.OnTotalPointsChanged += UpdateTotalPoints;
-    }
+{
+    Debug.Log("EndingUI subscribed to OnTotalPointsChanged");
+    endingPoints.OnTotalPointsChanged += UpdateTotalPoints;
+
+    Debug.Log("EndingUI subscribed to OnTotalScoreChanged");
+    quizScoreManager.OnTotalScoreChanged += UpdateTotalScoreQuiz;
+}
+
 
     private void OnDisable()
     {
-        // Unsubscribe from the event when the script is disabled
         endingPoints.OnTotalPointsChanged -= UpdateTotalPoints;
+        // Unsubscribe from the event when the script is disabled
+        quizScoreManager.OnTotalScoreChanged -= UpdateTotalScoreQuiz;
     }
 
     private void Start()
@@ -30,6 +36,8 @@ public class EndingUI : MonoBehaviour
         DisplayTotalPoints();
         // Display monolog based on total points
         DisplayMonologBasedOnPoints();
+        UpdateTotalScoreQuiz();
+        
     }
 
     private void UpdateTotalPoints()
@@ -37,6 +45,16 @@ public class EndingUI : MonoBehaviour
         DisplayTotalPoints();
         // Display monolog based on total points
         DisplayMonologBasedOnPoints();
+        UpdateTotalScoreQuiz();
+    }
+
+    private void UpdateTotalScoreQuiz()
+    {
+        // Display the updated total score from the quiz
+        if (totalScoreQuizText != null)
+        {
+            totalScoreQuizText.text = "Total Score (Quiz): " + quizScoreManager.TotalScore;
+        }
     }
 
     private void DisplayTotalPoints()

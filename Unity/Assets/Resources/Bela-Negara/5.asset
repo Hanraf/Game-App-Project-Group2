@@ -21,14 +21,14 @@ MonoBehaviour:
   - _info: Berusaha mencapai keseimbangan yang adil antara kepentingan pribadi dan
       bersama
     _isCorrect: 0
-    _answerScore: 10
+    _answerScore: 0
   - _info: Tergantung pada situasi dan prioritas tugas
     _isCorrect: 1
-    _answerScore: 0
+    _answerScore: 10
   - _info: Tidak terlalu memperhatikan kepentingan bersama dalam pekerjaan sehari-hari
     _isCorrect: 0
     _answerScore: 0
   _useTimer: 1
-  _timer: 15
+  _timer: 20
   _answerType: 1
   _addScore: 0
