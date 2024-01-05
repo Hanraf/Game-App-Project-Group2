@@ -74,7 +74,7 @@ public class EndingUI : MonoBehaviour
     {
         if (totalPointsText != null)
         {
-            totalPointsText.text = "Total Points Belanegara: " + endingPoints.TotalPoints;
+            totalPointsText.text = "Total Point penerapan nilai belanegara: " + endingPoints.TotalPoints;
         }
     }
 
@@ -82,7 +82,7 @@ public class EndingUI : MonoBehaviour
     {
         if (totalScoreQuizText != null)
         {
-            totalScoreQuizText.text = "Total Score (Quiz): " + quizScoreManager.TotalScore;
+            totalScoreQuizText.text = "Total score ujian: " + quizScoreManager.TotalScore;
         }
     }
 

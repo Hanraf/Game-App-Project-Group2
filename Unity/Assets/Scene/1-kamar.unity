@@ -4468,6 +4468,10 @@ PrefabInstance:
       propertyPath: choices.Array.data[2]
       value: 
       objectReference: {fileID: 1344950976}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: monologs.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 6afdf89c8e6b8c44d9f6b4f4e3e388de, type: 3}
     - target: {fileID: 1445034669430373113, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -5867,11 +5871,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6201289127815171772, guid: d92f61d0351962b4597aeb306558ec6c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.32
+      value: 24.71
       objectReference: {fileID: 0}
     - target: {fileID: 6201289127815171772, guid: d92f61d0351962b4597aeb306558ec6c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 48.5
+      value: 49.22
       objectReference: {fileID: 0}
     - target: {fileID: 6201289127815171772, guid: d92f61d0351962b4597aeb306558ec6c, type: 3}
       propertyPath: m_LocalPosition.z
