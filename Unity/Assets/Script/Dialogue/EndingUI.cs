@@ -1,60 +1,70 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using Ink.Runtime;
+using UnityEngine.SceneManagement;
+
+[System.Serializable]
+public class MonologCondition
+{
+    public string conditionName;
+    public int minTotalPoints;
+    public int maxTotalPoints;
+    public int minTotalScore;
+    public int maxTotalScore;
+    public TextAsset monolog;
+    public string sceneToLoad; // Add a field for the scene to load
+}
 
 public class EndingUI : MonoBehaviour
 {
     [SerializeField] private EndingPoints endingPoints;
     [SerializeField] private TextMeshProUGUI totalPointsText;
-    [SerializeField] private TextMeshProUGUI totalScoreQuizText; // New field for displaying total score from quiz
-    [SerializeField] private ScoreManager quizScoreManager; // Reference to the ScoreManager for quiz
+    [SerializeField] private TextMeshProUGUI totalScoreQuizText;
+    [SerializeField] private ScoreManager quizScoreManager;
+    [SerializeField] private Button continueButton; // Reference to the continue button
+    [SerializeField] private float buttonActivationDelay = 2f; // Delay in seconds before the button becomes clickable
 
     [Header("Monologs")]
-    [SerializeField] private TextAsset[] monologs;
+    [SerializeField] private MonologCondition[] monologConditions;
     private int currentMonologIndex = 0;
 
+    private bool isButtonClickable = false; // Variable to track whether the button is clickable
+
     private void OnEnable()
-{
-    Debug.Log("EndingUI subscribed to OnTotalPointsChanged");
-    endingPoints.OnTotalPointsChanged += UpdateTotalPoints;
-
-    Debug.Log("EndingUI subscribed to OnTotalScoreChanged");
-    quizScoreManager.OnTotalScoreChanged += UpdateTotalScoreQuiz;
-}
-
+    {
+        endingPoints.OnTotalPointsChanged += UpdateTotalPoints;
+        quizScoreManager.OnTotalScoreChanged += UpdateTotalScoreQuiz;
+    }
 
     private void OnDisable()
     {
         endingPoints.OnTotalPointsChanged -= UpdateTotalPoints;
-        // Unsubscribe from the event when the script is disabled
         quizScoreManager.OnTotalScoreChanged -= UpdateTotalScoreQuiz;
     }
 
     private void Start()
     {
         DisplayTotalPoints();
-        // Display monolog based on total points
-        DisplayMonologBasedOnPoints();
-        UpdateTotalScoreQuiz();
-        
+        DisplayTotalScoreQuiz();
+        DisplayMonologBasedOnConditions();
+        HideButton(); // Hide the button initially
     }
 
     private void UpdateTotalPoints()
     {
         DisplayTotalPoints();
-        // Display monolog based on total points
-        DisplayMonologBasedOnPoints();
-        UpdateTotalScoreQuiz();
+        DisplayMonologBasedOnConditions();
+        CheckButtonInteractivity();
     }
 
     private void UpdateTotalScoreQuiz()
     {
-        // Display the updated total score from the quiz
-        if (totalScoreQuizText != null)
-        {
-            totalScoreQuizText.text = "Total Score (Quiz): " + quizScoreManager.TotalScore;
-        }
+        DisplayTotalScoreQuiz();
+        DisplayMonologBasedOnConditions();
+        CheckButtonInteractivity();
     }
 
     private void DisplayTotalPoints()
@@ -65,43 +75,89 @@ public class EndingUI : MonoBehaviour
         }
     }
 
-    private void DisplayMonologBasedOnPoints()
+    private void DisplayTotalScoreQuiz()
     {
-        // Implement your logic for displaying monologs based on total points
-        // You can use if statements or switch cases to check the range of total points
-
-        // Example:
-        if (endingPoints.TotalPoints >= 0 && endingPoints.TotalPoints <= 10)
+        if (totalScoreQuizText != null)
         {
-            StartCoroutine(StartMonolog(monologs[0]));
+            totalScoreQuizText.text = "Total Score (Quiz): " + quizScoreManager.TotalScore;
         }
-        else if (endingPoints.TotalPoints >= 11 && endingPoints.TotalPoints <= 15)
-        {
-            StartCoroutine(StartMonolog(monologs[1]));
-        }
-        else if (endingPoints.TotalPoints >= 16 && endingPoints.TotalPoints <= 20)
-        {
-            StartCoroutine(StartMonolog(monologs[2]));
-        }
-        // Add more conditions as needed
     }
 
-    private IEnumerator StartMonolog(TextAsset monolog)
+    private void DisplayMonologBasedOnConditions()
     {
-        // Delay to give time for other objects in the scene to prepare
+        // Find the first condition that matches the current total points and total score
+        MonologCondition condition = Array.Find(monologConditions, IsConditionMet);
+
+        if (condition != null)
+        {
+            StartCoroutine(StartMonolog(condition));
+        }
+    }
+
+    private bool IsConditionMet(MonologCondition condition)
+    {
+        int totalPoints = endingPoints.TotalPoints;
+        int totalScore = quizScoreManager.TotalScore;
+
+        return totalPoints >= condition.minTotalPoints && totalPoints <= condition.maxTotalPoints &&
+               totalScore >= condition.minTotalScore && totalScore <= condition.maxTotalScore;
+    }
+
+    private IEnumerator StartMonolog(MonologCondition condition)
+    {
         yield return new WaitForSeconds(0.1f);
 
-        // Enter dialogue mode with the specified monolog
-        // You may need to replace null with the appropriate animator
-        DialogueManager.GetInstance().EnterDialogueMode(monolog, null);
+        DialogueManager.GetInstance().EnterDialogueMode(condition.monolog, null);
 
-        // Wait until the monolog is finished
         while (DialogueManager.GetInstance().dialogueIsPlaying)
         {
             yield return null;
         }
 
-        // Optional delay between monologs
-        yield return new WaitForSeconds(1.0f);
+        // Set the button to be clickable after the dialogue finishes
+        isButtonClickable = true;
+
+        // Wait for the specified delay before making the button clickable
+        yield return new WaitForSeconds(buttonActivationDelay);
+
+        // Show the button only if the scene has not been loaded yet
+        if (!string.IsNullOrEmpty(condition.sceneToLoad))
+        {
+            ShowButton();
+        }
+    }
+
+    private void CheckButtonInteractivity()
+    {
+        // Enable the button only if all dialogues have been completed and the button is clickable
+        if (continueButton != null)
+        {
+            continueButton.interactable = !DialogueManager.GetInstance().dialogueIsPlaying && isButtonClickable;
+        }
+    }
+
+    private void HideButton()
+    {
+        if (continueButton != null)
+        {
+            continueButton.gameObject.SetActive(false);
+        }
+    }
+
+    private void ShowButton()
+    {
+        if (continueButton != null)
+        {
+            continueButton.gameObject.SetActive(true);
+        }
+    }
+
+    public void ContinueButtonClicked()
+    {
+        // Load the specified scene after finishing the dialogue
+        if (isButtonClickable)
+        {
+            SceneManager.LoadScene(monologConditions[currentMonologIndex].sceneToLoad);
+        }
     }
 }
