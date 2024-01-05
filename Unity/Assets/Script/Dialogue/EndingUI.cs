@@ -15,7 +15,8 @@ public class MonologCondition
     public int minTotalScore;
     public int maxTotalScore;
     public TextAsset monolog;
-    public string sceneToLoad; // Add a field for the scene to load
+    public string sceneToLoad;
+    public string displayedText; // Add a field for the displayed text
 }
 
 public class EndingUI : MonoBehaviour
@@ -24,14 +25,15 @@ public class EndingUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI totalPointsText;
     [SerializeField] private TextMeshProUGUI totalScoreQuizText;
     [SerializeField] private ScoreManager quizScoreManager;
-    [SerializeField] private Button continueButton; // Reference to the continue button
-    [SerializeField] private float buttonActivationDelay = 2f; // Delay in seconds before the button becomes clickable
+    [SerializeField] private Button continueButton;
+    [SerializeField] private TextMeshProUGUI displayedText;
+    [SerializeField] private float buttonActivationDelay = 2f;
 
     [Header("Monologs")]
     [SerializeField] private MonologCondition[] monologConditions;
     private int currentMonologIndex = 0;
 
-    private bool isButtonClickable = false; // Variable to track whether the button is clickable
+    private bool isButtonClickable = false;
 
     private void OnEnable()
     {
@@ -49,8 +51,9 @@ public class EndingUI : MonoBehaviour
     {
         DisplayTotalPoints();
         DisplayTotalScoreQuiz();
+        DisplayInitialText(); // Add this line to display initial text
         DisplayMonologBasedOnConditions();
-        HideButton(); // Hide the button initially
+        HideButton();
     }
 
     private void UpdateTotalPoints()
@@ -71,7 +74,7 @@ public class EndingUI : MonoBehaviour
     {
         if (totalPointsText != null)
         {
-            totalPointsText.text = "Total Points: " + endingPoints.TotalPoints;
+            totalPointsText.text = "Total Points Belanegara: " + endingPoints.TotalPoints;
         }
     }
 
@@ -83,9 +86,17 @@ public class EndingUI : MonoBehaviour
         }
     }
 
+    private void DisplayInitialText()
+    {
+        // Display the specified text on TextMeshProUGUI at the beginning
+        if (displayedText != null && monologConditions.Length > 0)
+        {
+            displayedText.text = monologConditions[currentMonologIndex].displayedText;
+        }
+    }
+
     private void DisplayMonologBasedOnConditions()
     {
-        // Find the first condition that matches the current total points and total score
         MonologCondition condition = Array.Find(monologConditions, IsConditionMet);
 
         if (condition != null)
@@ -114,22 +125,23 @@ public class EndingUI : MonoBehaviour
             yield return null;
         }
 
-        // Set the button to be clickable after the dialogue finishes
         isButtonClickable = true;
 
-        // Wait for the specified delay before making the button clickable
         yield return new WaitForSeconds(buttonActivationDelay);
 
-        // Show the button only if the scene has not been loaded yet
         if (!string.IsNullOrEmpty(condition.sceneToLoad))
         {
             ShowButton();
+            // Display the specified text on TextMeshProUGUI
+            if (displayedText != null)
+            {
+                displayedText.text = condition.displayedText;
+            }
         }
     }
 
     private void CheckButtonInteractivity()
     {
-        // Enable the button only if all dialogues have been completed and the button is clickable
         if (continueButton != null)
         {
             continueButton.interactable = !DialogueManager.GetInstance().dialogueIsPlaying && isButtonClickable;
@@ -154,7 +166,6 @@ public class EndingUI : MonoBehaviour
 
     public void ContinueButtonClicked()
     {
-        // Load the specified scene after finishing the dialogue
         if (isButtonClickable)
         {
             SceneManager.LoadScene(monologConditions[currentMonologIndex].sceneToLoad);
