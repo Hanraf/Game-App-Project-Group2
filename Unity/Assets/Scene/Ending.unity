@@ -3467,7 +3467,7 @@ MonoBehaviour:
     maxTotalPoints: 10
     minTotalScore: 0
     maxTotalScore: 100
-    monolog: {fileID: 4900000, guid: 170a422fbabaa8146b8c1b9a521a92aa, type: 3}
+    monolog: {fileID: 4900000, guid: 481711a19c0af6d42ae6241e67fe4ec8, type: 3}
     sceneToLoad: Menu
     displayedText: kamu gagal
   - conditionName: berhasil quiz
@@ -3475,7 +3475,7 @@ MonoBehaviour:
     maxTotalPoints: 10
     minTotalScore: 101
     maxTotalScore: 150
-    monolog: {fileID: 4900000, guid: 9acee79cf7081bb4eb617836ae9c58e8, type: 3}
+    monolog: {fileID: 4900000, guid: ff32f16b6812045479ddd628de024a1b, type: 3}
     sceneToLoad: Menu
     displayedText: kamu berhasil, namun sikapmu kurang baik
   - conditionName: 'berhasil '
