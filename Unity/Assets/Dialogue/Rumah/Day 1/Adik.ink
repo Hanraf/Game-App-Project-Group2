@@ -1,24 +1,33 @@
 INCLUDE ../../globals.ink
 
-Hello there! #speaker:Adik #portrait:Adik #layout:left #audio:default
 -> main
 
 === main ===
-How are you feeling today?
-+ [Happy] #nilai:2
-    ~ playEmote("exclamation")
-    That makes me feel <color=\#F8FF30>happy</color> as well! #portrait:dr_green_happy
-+ [Sad] #nilai:1
-    Oh, well that makes me <color=\#5B81FF>sad</color> too. #portrait:dr_green_sad
-    
-- Don't trust him, he's <b><color=\#FF1E35>not</color></b> a real doctor! #speaker:Ms. Yellow #portrait:ms_yellow_neutral #layout:right #audio:animal_crossing_high
+Pagi diks, kakakmu ini akan pergi belajar ke kampus bela negara!! #speaker:Putra #portrait:Putra #layout:left
+Kakak mau pergi lagi? Ke mana? Gak capek pergi terus? Santai lah kak, main sama aku disini #speaker:Adik #portrait:Adik #layout:right
 
+Adikku.., sebagai orang yang telah dewasa, #speaker:Putra #portrait:Putra #layout:left 
+kakak punya kewajiban untuk berbakti pada bangsa dan tanah air
+Jadi kakak tidak bisa berdiam diri dan tidak melakukan apa apa
+Nanti saat kamu dewasa kamu akan mengerti
 
-~ playEmote("question")
-Well, do you have any more questions? #speaker:Dr. Green #portrait:dr_green_neutral #layout:left #audio:animal_crossing_mid
-+ [Yes]
-    -> main 
-+ [No]
-    Goodbye then!
+Oh begitu ya kak, tapi aku mau ikut~!  \(‘v’)/ #speaker:Adik #portrait:Adik #layout:right
+
+Hei hei, adikku yang manis. Kali ini kakak harus fokus belajar,#speaker:Putra #portrait:Putra #layout:left
+Bagaimana kalau nanti jika ujian sukses kakak traktir es krim kesukaanmu?~
+
+Aq mw aq mw ~!! UwU #speaker:Adik #portrait:Adik #layout:right
+Janji ya?
+
+Selama kamu jadi gadis baik #speaker:Putra #portrait:Putra #layout:left
+
+Siap kaks~!! (*v*)7 #speaker:Adik #portrait:Adik #layout:right
+Semangat ya belajarnya~!!
+
+Tentu saja, terima kasih diks~ #speaker:Putra #portrait:Putra #layout:left
+Dadah
+Adik :
+Dadah~  *^_^* #speaker:Adik #portrait:Adik #layout:right
+
     
     -> END
