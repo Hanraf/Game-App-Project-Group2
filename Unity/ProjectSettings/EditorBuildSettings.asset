@@ -28,13 +28,49 @@ EditorBuildSettings:
     guid: 97ce71df9683c8f47b466839e546f211
   - enabled: 1
     path: Assets/Scene/1-Halaman.unity
-    guid: c66929b0546bd974aa5ee83c9ca8b794
+    guid: 91bd00c3263025941b757fe661d4ef6c
   - enabled: 1
     path: Assets/Scene/1-berkendara.unity
-    guid: 5c4cb229443302249b2ffd6aeecd9992
+    guid: 242cfeb6d8325824d897fcb8281ffc76
   - enabled: 1
     path: Assets/Scene/1-Kampus.unity
     guid: 4e4c774d6f0cc724e94a6dca0e3de1e2
+  - enabled: 1
+    path: Assets/Scene/1-Perpus.unity
+    guid: c49cfece7ce744946b9c8bae50b0c575
+  - enabled: 1
+    path: Assets/Scene/2-kamar.unity
+    guid: 1364147364b28154bbfe45d8e541476e
+  - enabled: 1
+    path: Assets/Scene/2-ruang_keluarga.unity
+    guid: 7fbc57a17d9875e42958b04c289ea8af
+  - enabled: 1
+    path: Assets/Scene/2-Halaman.unity
+    guid: 132e860601cdadd41944a1351d0908a1
+  - enabled: 1
+    path: Assets/Scene/2-berkendara.unity
+    guid: 2e66e9efa11776941993cdf5fcb7ff81
+  - enabled: 1
+    path: Assets/Scene/2-Kampus.unity
+    guid: f5ee0918085008347a6f3b3d4adc4ce1
+  - enabled: 1
+    path: Assets/Scene/2-Perpus.unity
+    guid: f8f04ff9ee9f1b3489480ee8bc214289
+  - enabled: 1
+    path: Assets/Scene/3-kamar.unity
+    guid: 5037c23de2a03d44ca9fe967456b1446
+  - enabled: 1
+    path: Assets/Scene/3-ruang_keluarga.unity
+    guid: 476b6303ebada0043924d12e17bd7f62
+  - enabled: 1
+    path: Assets/Scene/3-Halaman.unity
+    guid: 463a7b43a7c9e9a4b8aea56cb74f7a7a
+  - enabled: 1
+    path: Assets/Scene/3-berkendara.unity
+    guid: aa24d55887c473e46818fa28539b689b
+  - enabled: 1
+    path: Assets/Scene/3-Kampus.unity
+    guid: 2040ceb95d2585246875aa108d991b36
   - enabled: 1
     path: Assets/Scene/ruang_ujian.unity
     guid: b73933a98a1f84d429186812fc23a4f2
@@ -47,42 +83,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Quiz (Karakteristik).unity
     guid: 85c2038fd0e579445b2a5eaa23ba459f
-  - enabled: 1
-    path: Assets/Scene/1-Perpus.unity
-    guid: c49cfece7ce744946b9c8bae50b0c575
-  - enabled: 1
-    path: Assets/Scene/2-kamar.unity
-    guid: b201d7fc13d1a1a4e9fb8b25979e99a0
-  - enabled: 1
-    path: Assets/Scene/2-ruang_keluarga.unity
-    guid: 40f7e7aa75e398742aca949961896394
-  - enabled: 1
-    path: Assets/Scene/2-Halaman.unity
-    guid: bd68cc674b3ad814abf1cfb9c3fd1c5b
-  - enabled: 1
-    path: Assets/Scene/2-berkendara.unity
-    guid: e9759b73c658c424f9b18e0294be8f80
-  - enabled: 1
-    path: Assets/Scene/2-Kampus.unity
-    guid: 1b0ab244ab3b3cf47969b3251dd23a32
-  - enabled: 1
-    path: Assets/Scene/2-Perpus.unity
-    guid: fe573cb4c26029b4db63b043c45eee22
-  - enabled: 1
-    path: Assets/Scene/3-kamar.unity
-    guid: 83b269cd7cd364143b6f5f9f2875fc6f
-  - enabled: 1
-    path: Assets/Scene/3-ruang_keluarga.unity
-    guid: 9eedb37114afb7b4d87e3dde3acf06c1
-  - enabled: 1
-    path: Assets/Scene/3-Halaman.unity
-    guid: 463a7b43a7c9e9a4b8aea56cb74f7a7a
-  - enabled: 1
-    path: Assets/Scene/3-berkendara.unity
-    guid: fee3818b5fec88a4ba5315ab7f41934a
-  - enabled: 1
-    path: Assets/Scene/3-Kampus.unity
-    guid: a65862d08b25b7e4e9b895e58c952d88
   - enabled: 1
     path: Assets/Scene/Ending.unity
     guid: 3aad38ad2fd5576418a919afc0909312

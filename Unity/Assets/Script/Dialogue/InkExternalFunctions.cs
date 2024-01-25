@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Ink.Runtime;
 
 public class InkExternalFunctions
@@ -27,6 +28,11 @@ public class InkExternalFunctions
             Debug.LogWarning("Tried to play emote, but emote animator was "
                 + "not initialized when entering dialogue mode.");
         }
+    }
+
+    private void PindahScene()
+    {
+        // SceneManager.LoadScene(levelCompleteSceneName);
     }
     
 }

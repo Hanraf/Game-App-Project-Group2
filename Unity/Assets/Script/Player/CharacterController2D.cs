@@ -49,22 +49,15 @@ private void UpdateAnimator()
 {
     if (DialogueManager.GetInstance().dialogueIsPlaying)
     {
-        // Set Speed parameter to 0 when in dialogue
-        animator.SetFloat("Speed", 0f);
-
-        animator.SetBool("IsFacingUp", false);
-        animator.SetBool("IsFacingDown", false);
-        animator.SetBool("IsFacingRight", false);
-        animator.SetBool("IsFacingLeft", false);
-
-        return;
+        rb.velocity = Vector2.zero;
+            return;
     }
 
     Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
 
     // Set Speed parameter based on horizontal or vertical movement
     float speed = Mathf.Max(Mathf.Abs(moveDirection.x), Mathf.Abs(moveDirection.y));
-    animator.SetFloat("Speed", speed);
+    // animator.SetFloat("Speed", speed);
 
     // Set facing direction parameters
     if (moveDirection.x > 0)
@@ -100,14 +93,14 @@ private void UpdateAnimator()
     }
 
     // Check if the character is not moving, then stop the animation
-    if (speed == 0)
-    {
-        animator.SetBool("IsMoving", false);
-    }
-    else
-    {
-        animator.SetBool("IsMoving", true);
-    }
+    // if (speed == 0)
+    // {
+    //     animator.SetBool("IsMoving", false);
+    // }
+    // else
+    // {
+    //     animator.SetBool("IsMoving", true);
+    // }
 }
 
 }
