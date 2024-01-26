@@ -1,9 +1,9 @@
 INCLUDE ../globals.ink
-~ playEmote("question")
+~ playEmote("clue")
 -> main
-~ playEmote("question")
+~ playEmote("clue")
 === main ===
 .
-~ playEmote("question")
+~ playEmote("clue")
 
     -> END
