@@ -5,9 +5,9 @@ INCLUDE ../globals.ink
 === main ===
 
 Sugeng enjing mase#speaker:Rudi #portrait:Rudi #layout:right
-+[Kamu kok kasar]#speaker:Putra #portrait:Putra #layout:left
++[Kamu kok kasar]#nilai:2 #speaker:Putra #portrait:Putra #layout:left
 oh nggak mas, maaf itu bahasa jawa, artinya selamat pagi#speaker:Rudi #portrait:Rudi #layout:right
-+[Saya tidak mengerti bahasa jawa]#speaker:Putra #portrait:Putra #layout:left
++[Saya tidak mengerti bahasa jawa]#nilai:4 #speaker:Putra #portrait:Putra #layout:left
 oh, maaf mas artinya selamat pagi masnya#speaker:Rudi #portrait:Rudi #layout:right
 - oh, pagi juga mas#speaker:Putra #portrait:Putra #layout:left
 disini rata-rata orang jawa ya
