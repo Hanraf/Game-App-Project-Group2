@@ -60674,12 +60674,12 @@ Animator:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &448748777 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7268311419005123684, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6378783209889744386, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
   m_PrefabInstance: {fileID: 448748774}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &448748778 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6300417342110498885, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7153153669206566143, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
   m_PrefabInstance: {fileID: 448748774}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &448748779 stripped

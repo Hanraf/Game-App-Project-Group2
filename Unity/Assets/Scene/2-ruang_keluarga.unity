@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &72283358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6378783209889744386, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+  m_PrefabInstance: {fileID: 1442037995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &79958991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,11 +1121,11 @@ PrefabInstance:
     - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: choices.Array.data[1]
       value: 
-      objectReference: {fileID: 239748305}
+      objectReference: {fileID: 990686168}
     - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: choices.Array.data[2]
       value: 
-      objectReference: {fileID: 2083119818}
+      objectReference: {fileID: 72283358}
     - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: monologs.Array.data[0]
       value: 
@@ -1410,11 +1415,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &239748305 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6300417342110498885, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
-  m_PrefabInstance: {fileID: 1442037995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &243371992 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
@@ -1569,6 +1569,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 995872051288583056, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
   m_PrefabInstance: {fileID: 1442037995}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &990686168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7153153669206566143, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+  m_PrefabInstance: {fileID: 1442037995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1165443266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,15 +1636,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas Dialogue NPC
       objectReference: {fileID: 0}
-    - target: {fileID: 1686208864823461873, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 243371992}
-    - target: {fileID: 3214851271734407009, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 243371992}
     - target: {fileID: 4935495449451144215, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 243371992}
+    - target: {fileID: 8042252920173300508, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 243371992}
+    - target: {fileID: 8427360070337487170, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 243371992}
@@ -9297,11 +9302,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &2083119818 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7268311419005123684, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
-  m_PrefabInstance: {fileID: 1442037995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2556922971113780537
 PrefabInstance:
   m_ObjectHideFlags: 0
