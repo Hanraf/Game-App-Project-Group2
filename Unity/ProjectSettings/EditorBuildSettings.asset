@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scene/1-Halaman.unity
     guid: 91bd00c3263025941b757fe661d4ef6c
   - enabled: 1
+    path: Assets/Scene/Daftar-Pustaka.unity
+    guid: 9c46fd989bac99a4caa2882553cd2c99
+  - enabled: 1
     path: Assets/Scene/1-berkendara.unity
     guid: 242cfeb6d8325824d897fcb8281ffc76
   - enabled: 1
