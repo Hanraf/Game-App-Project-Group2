@@ -12,11 +12,13 @@ public class CharacterController2D : MonoBehaviour
 
     private BoxCollider2D coll;
     private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         coll = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         rb.gravityScale = gravityScale;
     }
@@ -36,71 +38,66 @@ public class CharacterController2D : MonoBehaviour
 
     private void HandleMovement()
     {
-        // Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
-        // Vector2 velocity = new Vector2(moveDirection.x * runSpeed, moveDirection.y * runSpeed);
-        // rb.velocity = velocity;
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
         rb.velocity = new Vector2(moveDirection.x * runSpeed, moveDirection.y * runSpeed);
     }
 
-    // ...
-
-private void UpdateAnimator()
-{
-    if (DialogueManager.GetInstance().dialogueIsPlaying)
+    private void UpdateAnimator()
     {
-        rb.velocity = Vector2.zero;
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            rb.velocity = Vector2.zero;
             return;
-    }
+        }
 
-    Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
+        Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
 
-    // Set Speed parameter based on horizontal or vertical movement
-    float speed = Mathf.Max(Mathf.Abs(moveDirection.x), Mathf.Abs(moveDirection.y));
-    // animator.SetFloat("Speed", speed);
+        float speed = Mathf.Max(Mathf.Abs(moveDirection.x), Mathf.Abs(moveDirection.y));
 
-    // Set facing direction parameters
-    if (moveDirection.x > 0)
-    {
-        animator.SetBool("IsFacingRight", true);
-        animator.SetBool("IsFacingLeft", false);
-    }
-    else if (moveDirection.x < 0)
-    {
-        animator.SetBool("IsFacingRight", false);
-        animator.SetBool("IsFacingLeft", true);
-    }
-    else
-    {
-        animator.SetBool("IsFacingRight", false);
-        animator.SetBool("IsFacingLeft", false);
-    }
+        if (moveDirection.x > 0)
+        {
+            // Set facing direction parameters
+            animator.SetBool("IsFacingRight", true);
+            animator.SetBool("IsFacingLeft", false);
+        }
+        else if (moveDirection.x < 0)
+        {
+            animator.SetBool("IsFacingRight", false);
+            animator.SetBool("IsFacingLeft", true);
+        }
+        else
+        {
+            animator.SetBool("IsFacingRight", false);
+            animator.SetBool("IsFacingLeft", false);
+        }
 
-    if (moveDirection.y > 0)
-    {
-        animator.SetBool("IsFacingUp", true);
-        animator.SetBool("IsFacingDown", false);
-    }
-    else if (moveDirection.y < 0)
-    {
-        animator.SetBool("IsFacingUp", false);
-        animator.SetBool("IsFacingDown", true);
-    }
-    else
-    {
-        animator.SetBool("IsFacingUp", false);
-        animator.SetBool("IsFacingDown", false);
-    }
+        if (moveDirection.y > 0)
+        {
+            animator.SetBool("IsFacingUp", true);
+            animator.SetBool("IsFacingDown", false);
+        }
+        else if (moveDirection.y < 0)
+        {
+            animator.SetBool("IsFacingUp", false);
+            animator.SetBool("IsFacingDown", true);
+        }
+        else
+        {
+            animator.SetBool("IsFacingUp", false);
+            animator.SetBool("IsFacingDown", false);
+        }
 
-    // Check if the character is not moving, then stop the animation
-    // if (speed == 0)
-    // {
-    //     animator.SetBool("IsMoving", false);
-    // }
-    // else
-    // {
-    //     animator.SetBool("IsMoving", true);
-    // }
-}
+        // Check if the character is not moving, then stop the animation
+        // if (speed == 0)
+        // {
+        //     animator.SetBool("IsMoving", false);
+        // }
+        // else
+        // {
+        //     animator.SetBool("IsMoving", true);
+        // }
 
+        // Set sorting order to ensure it's always 2
+        spriteRenderer.sortingOrder = 2;
+    }
 }

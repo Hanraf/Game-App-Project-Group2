@@ -49,25 +49,28 @@ public class EndingUI : MonoBehaviour
 
     private void Start()
     {
+        HideButton();
+        DisplayMonologBasedOnConditions();
         DisplayTotalPoints();
         DisplayTotalScoreQuiz();
-        DisplayInitialText(); // Add this line to display initial text
-        DisplayMonologBasedOnConditions();
-        HideButton();
+        
+        // DisplayInitialText(); // Add this line to display initial text
+        
+        
     }
 
     private void UpdateTotalPoints()
     {
         DisplayTotalPoints();
-        DisplayMonologBasedOnConditions();
-        CheckButtonInteractivity();
+        // DisplayMonologBasedOnConditions();
+        // CheckButtonInteractivity();
     }
 
     private void UpdateTotalScoreQuiz()
     {
         DisplayTotalScoreQuiz();
-        DisplayMonologBasedOnConditions();
-        CheckButtonInteractivity();
+        // DisplayMonologBasedOnConditions();
+        // CheckButtonInteractivity();
     }
 
     private void DisplayTotalPoints()
@@ -86,14 +89,14 @@ public class EndingUI : MonoBehaviour
         }
     }
 
-    private void DisplayInitialText()
-    {
-        // Display the specified text on TextMeshProUGUI at the beginning
-        if (displayedText != null && monologConditions.Length > 0)
-        {
-            displayedText.text = monologConditions[currentMonologIndex].displayedText;
-        }
-    }
+    // private void DisplayInitialText()
+    // {
+    //     // Display the specified text on TextMeshProUGUI at the beginning
+    //     if (displayedText != null && monologConditions.Length > 0)
+    //     {
+    //         displayedText.text = monologConditions[currentMonologIndex].displayedText;
+    //     }
+    // }
 
     private void DisplayMonologBasedOnConditions()
     {
@@ -166,9 +169,14 @@ public class EndingUI : MonoBehaviour
 
     public void ContinueButtonClicked()
     {
-        if (isButtonClickable)
+        MonologCondition condition = Array.Find(monologConditions, IsConditionMet);
+
+        if (condition != null)
         {
-            SceneManager.LoadScene(monologConditions[currentMonologIndex].sceneToLoad);
-        }
+            if (isButtonClickable)
+            {
+            SceneManager.LoadScene(condition.sceneToLoad);
+            }
+        }    
     }
 }

@@ -87,6 +87,15 @@ EditorBuildSettings:
     path: Assets/Scene/Ending.unity
     guid: 3aad38ad2fd5576418a919afc0909312
   - enabled: 1
+    path: Assets/Scene/Bad-Ending.unity
+    guid: af746fbe1d8f10a4ab1e05edaf5be342
+  - enabled: 1
+    path: Assets/Scene/Middle-Ending.unity
+    guid: bc60d42975f139643967b1b0bf358d7d
+  - enabled: 1
+    path: Assets/Scene/Good-Ending.unity
+    guid: 9b237820bb9e1e14fb7a0e6096580f42
+  - enabled: 1
     path: Assets/Scene/Template/coba (berkendara).unity
     guid: 505d8284754114444a52d37ad74ca02b
   m_configObjects:

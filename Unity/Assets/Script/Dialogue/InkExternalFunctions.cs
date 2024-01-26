@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Ink.Runtime;
+using System.Collections;
+using System.Collections.Generic;
+
 
 public class InkExternalFunctions
 {
@@ -10,6 +13,7 @@ public class InkExternalFunctions
     public void Bind(Story story, Animator emoteAnimator)
     {
         story.BindExternalFunction("playEmote", (string emoteName) => PlayEmote(emoteName, emoteAnimator));
+        story.BindExternalFunction("LoadToScene", (string sceneName) => LoadToScene(sceneName));
         story.BindExternalFunction("Pause", () => Pause());
         story.BindExternalFunction("Continue", () => Continue());
     }
@@ -17,6 +21,7 @@ public class InkExternalFunctions
     public void Unbind(Story story)
     {
         story.UnbindExternalFunction("playEmote");
+        story.UnbindExternalFunction("LoadToScene");
         story.UnbindExternalFunction("Pause");
         story.UnbindExternalFunction("Continue");
     }
@@ -33,6 +38,11 @@ public class InkExternalFunctions
             Debug.LogWarning("Tried to play emote, but emote animator was "
                 + "not initialized when entering dialogue mode.");
         }
+    }
+
+    public void LoadToScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName); // Memuat scene dengan nama yang diberikan
     }
 
     public void Pause()

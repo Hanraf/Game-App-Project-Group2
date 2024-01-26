@@ -1355,11 +1355,11 @@ PrefabInstance:
     - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: choices.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1785093772}
     - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: choices.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1033309268}
     - target: {fileID: 1445034669430373113, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -1420,6 +1420,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab139cbb500fe241aa19fe9d96270ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1033309268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6378783209889744386, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+  m_PrefabInstance: {fileID: 1907868313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1077551594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1430,7 +1435,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 493521267496460317, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_Size.x
-      value: 23.141941
+      value: 23.58736
       objectReference: {fileID: 0}
     - target: {fileID: 493521267496460317, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_Size.y
@@ -1438,7 +1443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 493521267496460317, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_Offset.x
-      value: 3.33082
+      value: 3.5535297
       objectReference: {fileID: 0}
     - target: {fileID: 493521267496460317, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_Offset.y
@@ -1591,7 +1596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2249299180280520767, guid: 65cdf59fdf73c1a49865680802c38b54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 50.15
+      value: 49.94
       objectReference: {fileID: 0}
     - target: {fileID: 2249299180280520767, guid: 65cdf59fdf73c1a49865680802c38b54, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1830,7 +1835,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.6270901}
+  m_Offset: {x: 0, y: -1.6095206}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1841,7 +1846,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.19138503}
+  m_Size: {x: 1, y: 0.22652411}
   m_EdgeRadius: 0
 --- !u!61 &1682668771
 BoxCollider2D:
@@ -1875,7 +1880,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.46270674, y: -0.61643696}
+  m_Offset: {x: 0.45022702, y: -0.61643696}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1886,7 +1891,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.027988315, y: 2.2328744}
+  m_Size: {x: 0.05294773, y: 2.2328744}
   m_EdgeRadius: 0
 --- !u!61 &1682668775
 BoxCollider2D:
@@ -1920,7 +1925,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.503228, y: -0.66772133}
+  m_Offset: {x: -0.49477237, y: -0.74854165}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1931,7 +1936,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.03213322, y: 1.5678529}
+  m_Size: {x: 0.04904449, y: 1.7294935}
   m_EdgeRadius: 0
 --- !u!61 &1682668782
 BoxCollider2D:
@@ -1965,7 +1970,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.19140255}
+  m_Offset: {x: 0, y: 0.20146999}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1976,7 +1981,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.6171949}
+  m_Size: {x: 1, y: 0.59706}
   m_EdgeRadius: 0
 --- !u!4 &1682668783
 Transform:
@@ -2578,6 +2583,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.08058976, y: 0.29832768}
   m_EdgeRadius: 0
+--- !u!1 &1785093772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7153153669206566143, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+  m_PrefabInstance: {fileID: 1907868313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1794592093
 GameObject:
   m_ObjectHideFlags: 0
@@ -5623,6 +5633,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 700458142}
+    - target: {fileID: 8042252920173300508, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 700458142}
+    - target: {fileID: 8042252920173300508, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MakeChoice
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427360070337487170, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 700458142}
+    - target: {fileID: 8427360070337487170, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MakeChoice
+      objectReference: {fileID: 0}
     - target: {fileID: 9092936398682122933, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
       propertyPath: m_Pivot.x
       value: 0

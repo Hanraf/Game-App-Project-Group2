@@ -14,5 +14,5 @@ Kamu luar biasa, Nak! #speaker:Ibu #portrait:Ibu #layout:right
 Kakak berhasil~! Sekarang traktiranku di mana? #speaker:Adik #portrait:Adik #layout:right
 
 Tentu saja! Terima kasih atas doa dan dukungannya, semuanya #speaker:Putra #portrait:Putra #layout:left
-
+~ LoadToScene("menu")
     -> END
