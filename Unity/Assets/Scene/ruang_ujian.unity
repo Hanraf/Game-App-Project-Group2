@@ -1349,6 +1349,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1907868315}
     - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: monologs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: choices.Array.data[0]
       value: 
       objectReference: {fileID: 1907868318}
