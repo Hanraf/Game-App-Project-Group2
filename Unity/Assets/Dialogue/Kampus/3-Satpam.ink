@@ -3,7 +3,7 @@ INCLUDE ../globals.ink
 -> main
 
 === main ===
-
+Hmm... Ada pak satpam #speaker:Putra #portrait:Putra #layout:right
 + [permisi pak mau tanya] #speaker:Putra #portrait:Putra #layout:left
 + [hey] 
 

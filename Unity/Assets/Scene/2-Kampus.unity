@@ -372,7 +372,7 @@ PrefabInstance:
     - target: {fileID: 5162146856214509891, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 2ec1cf1e91d110444878cbb2c5e7756a, type: 3}
+      objectReference: {fileID: 4900000, guid: bcd15b1c5069cff4083e671f945100a1, type: 3}
     - target: {fileID: 7181857882803832502, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.01
@@ -1375,6 +1375,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 256993261}
     - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: monologs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: choices.Array.data[0]
       value: 
       objectReference: {fileID: 256993260}
@@ -1386,6 +1390,10 @@ PrefabInstance:
       propertyPath: choices.Array.data[2]
       value: 
       objectReference: {fileID: 256993258}
+    - target: {fileID: 1439178113438512451, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
+      propertyPath: monologs.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1445034669430373113, guid: 136287233a609a4478b2a7ba53a879d5, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -1477,7 +1485,7 @@ PrefabInstance:
     - target: {fileID: 5162146856214509891, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 2ec1cf1e91d110444878cbb2c5e7756a, type: 3}
+      objectReference: {fileID: 4900000, guid: 9247f5c64feedd242a67c084a33e4b5e, type: 3}
     - target: {fileID: 7181857882803832502, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.04
@@ -1913,7 +1921,7 @@ PrefabInstance:
     - target: {fileID: 5162146856214509891, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 2ec1cf1e91d110444878cbb2c5e7756a, type: 3}
+      objectReference: {fileID: 4900000, guid: b9682c09d630e4242a70322989187dd0, type: 3}
     - target: {fileID: 7181857882803832502, guid: 982542e24a098ba419a7f67264300ecf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.52

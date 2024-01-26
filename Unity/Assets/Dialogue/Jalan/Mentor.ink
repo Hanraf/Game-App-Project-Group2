@@ -1,5 +1,6 @@
 INCLUDE ../globals.ink
 
+
 -> main
 
 === main ===
@@ -17,4 +18,4 @@ Ingat, tetap berkendara yang aman dan hindari segala rintangan agar tetap selama
 
 Siap mentor!! Terima kasih atas nasihatnya~!! #speaker:Putra #portrait:Putra #layout:left
 
-    -> END
+    -> END 
