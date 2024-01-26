@@ -3460,7 +3460,7 @@ MonoBehaviour:
   quizScoreManager: {fileID: 11400000, guid: 5fab183ad625a73428cc29ff363c758f, type: 2}
   continueButton: {fileID: 476682790}
   displayedText: {fileID: 1759884996}
-  buttonActivationDelay: 2
+  buttonActivationDelay: 1
   monologConditions:
   - conditionName: gagal
     minTotalPoints: 0
@@ -5119,6 +5119,8 @@ PrefabInstance:
     - {fileID: 7268311419005123684, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
     - {fileID: 6300417342110498885, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
     - {fileID: 4513921440567712282, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+    - {fileID: 7153153669206566143, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
+    - {fileID: 6378783209889744386, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 9092936398682122933, guid: d653151567e8f434eb3c17bac10d5897, type: 3}
       insertIndex: -1
