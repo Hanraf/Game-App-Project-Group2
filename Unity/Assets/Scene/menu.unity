@@ -297,8 +297,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20.28, y: 111.31}
-  m_SizeDelta: {x: 559.06, y: 163.42}
+  m_AnchoredPosition: {x: -50.09, y: 51}
+  m_SizeDelta: {x: 490.88, y: 163.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &894076774
 MonoBehaviour:
@@ -353,7 +353,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: pilih_karakter
+          m_StringArgument: 1-kamar
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &894076775
@@ -532,7 +532,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3f5ad75dae30f3249941c4fba454beb5, type: 2}
+  - {fileID: 2100000, guid: 0ba693e031025a94d866b49d04e4d5f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -705,8 +705,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -42.002, y: -345}
-  m_SizeDelta: {x: 515.62, y: 163.42}
+  m_AnchoredPosition: {x: -37.72, y: -210.98}
+  m_SizeDelta: {x: 515.62, y: 175.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1268855730
 MonoBehaviour:

@@ -3561,22 +3561,22 @@ MonoBehaviour:
   monologConditions:
   - conditionName: gagal bad-ending
     minTotalPoints: 0
-    maxTotalPoints: 16
+    maxTotalPoints: 20
     minTotalScore: 0
-    maxTotalScore: 185
+    maxTotalScore: 174
     monolog: {fileID: 4900000, guid: 481711a19c0af6d42ae6241e67fe4ec8, type: 3}
     sceneToLoad: Bad-Ending
     displayedText: kamu gagal
   - conditionName: berhasil quiz aja midle -ending
     minTotalPoints: 0
-    maxTotalPoints: 23
-    minTotalScore: 185
+    maxTotalPoints: 24
+    minTotalScore: 175
     maxTotalScore: 350
     monolog: {fileID: 4900000, guid: 85de4b167e4cc844daa1ea5e435a9376, type: 3}
     sceneToLoad: Middle-Ending
     displayedText: kamu berhasil, namun sikapmu kurang baik
   - conditionName: berhasil good end
-    minTotalPoints: 24
+    minTotalPoints: 25
     maxTotalPoints: 99
     minTotalScore: 185
     maxTotalScore: 350
