@@ -81,7 +81,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
-        inkExternalFunctions = new InkExternalFunctions();
 
         // get the layout animator
         layoutAnimator = dialoguePanel.GetComponent<Animator>();
@@ -130,8 +129,8 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        // return right away if dialogue isn't playing or if it's paused
-        if (!dialogueIsPlaying || inkExternalFunctions.IsPaused())
+        // return right away if dialogue isn't playing
+        if (!dialogueIsPlaying)
         {
             return;
         }
@@ -143,16 +142,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void PauseDialogue()
-    {
-        Time.timeScale = 0;
-    }
-
-    public void ContinueDialogue()
-    {
-        Time.timeScale = 1;
-    }
-
     public void EnterDialogueMode(TextAsset inkJSON, Animator emoteAnimator)
     {
         currentStory = new Story(inkJSON.text);
@@ -161,7 +150,6 @@ public class DialogueManager : MonoBehaviour
 
         dialogueVariables.StartListening(currentStory);
         inkExternalFunctions.Bind(currentStory, emoteAnimator);
-        
 
         // reset portrait, layout, and speaker
         displayNameText.text = "???";
@@ -186,7 +174,7 @@ public class DialogueManager : MonoBehaviour
         SetCurrentAudioInfo(defaultAudioInfo.id);
     }
 
-    public void ContinueStory()
+    private void ContinueStory()
     {
         if (currentStory.canContinue)
         {
